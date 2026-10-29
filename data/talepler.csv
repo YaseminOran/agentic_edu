@@ -1,0 +1,41 @@
+talep_id,musteri_no,kanal,tarih,talep
+T0001,M1004,web,2026-09-29,"Merhaba, kredi kartı ekstremin kesim tarihini nereden görebilirim?"
+T0002,M1012,web,2026-09-30,"Kartımdan 3677,79 TL iki kez çekilmiş, birini iade etmenizi istiyorum."
+T0003,M1004,web,2026-09-30,"Kartımı kaybettim, numarası 9999 0000 0000 0005. Lütfen hemen kapatın!"
+T0004,M1020,mobil,2026-09-30,"Konut kredimi erken kapatmak istiyorum, ne kadar ücret çıkar?"
+T0005,M1025,eposta,2026-09-28,"Mobil uygulamaya giremiyorum, şifremi unuttum."
+T0006,M1022,sube,2026-09-29,"FAST ile para gönderdim ama karşı tarafa ulaşmamış, ne oldu?"
+T0007,M1028,cagri_merkezi,2026-09-30,"Hesabımdan hesap işletim ücreti kesilmiş, bunu kabul etmiyorum, iadesini istiyorum."
+T0008,M1015,eposta,2026-09-29,"Ben Emre Örnek, TCKN 99999000015. IBAN'ım TR00 9999 9000 0000 0000 0000 15, maaşım yatmamış görünüyor, kontrol eder misiniz?"
+T0009,M1026,mobil,2026-09-29,"Ekstremde tanımadığım yurt dışı harcamalar var, ben yapmadım!"
+T0010,M1017,eposta,2026-09-28,İnternet şubesinde sürekli oturum zaman aşımı hatası alıyorum.
+T0011,M1002,cagri_merkezi,2026-10-01,Kredi kartı limitimi artırmak istiyorum.
+T0012,M1021,mobil,2026-09-28,"Taksitlerimi ödeyemiyorum, işimi kaybettim. Ne yapabilirim?"
+T0013,M1015,mobil,2026-09-28,"Bankanızdan aradılar, telefonuma gelen kodu istediler, verdim. Sorun olur mu?"
+T0014,M1030,web,2026-09-29,Kartım çalışmıyor.
+T0015,M1020,web,2026-10-01,"Üç haftadır aynı şikayeti yapıyorum, kimse dönmüyor. Bir yetkiliyle görüşmek istiyorum."
+T0016,M1015,cagri_merkezi,2026-10-01,"EFT'yi yanlış IBAN'a gönderdim, 651,98 TL. Geri alabilir miyim?"
+T0017,M1017,mobil,2026-09-30,Hesabımı kapatmak istiyorum.
+T0018,M1023,eposta,2026-09-30,"Uygulama her açılışta çöküyor, güncelledim yine olmadı."
+T0019,M1012,cagri_merkezi,2026-09-28,Şubeleriniz cumartesi açık mı?
+T0020,M1014,sube,2026-10-01,"Merhaba ben Ece Kurmaca, kart numaram 9999 0000 0000 0014, son ödeme tarihim hafta sonuna denk geldi, faiz işler mi?"
+T0021,M1026,cagri_merkezi,2026-10-01,"Merhaba, kredi kartı ekstremin kesim tarihini nereden görebilirim?"
+T0022,M1011,eposta,2026-09-29,"Kartımdan 608,35 TL iki kez çekilmiş, birini iade etmenizi istiyorum."
+T0023,M1009,sube,2026-09-30,"Kartımı kaybettim, numarası 9999 0000 0000 0009. Lütfen hemen kapatın!"
+T0024,M1011,web,2026-09-29,"Konut kredimi erken kapatmak istiyorum, ne kadar ücret çıkar?"
+T0025,M1010,eposta,2026-09-30,"Mobil uygulamaya giremiyorum, şifremi unuttum."
+T0026,M1020,mobil,2026-09-29,"FAST ile para gönderdim ama karşı tarafa ulaşmamış, ne oldu?"
+T0027,M1018,cagri_merkezi,2026-09-30,"Hesabımdan hesap işletim ücreti kesilmiş, bunu kabul etmiyorum, iadesini istiyorum."
+T0028,M1022,sube,2026-10-01,"Ben Derya Kurmaca, TCKN 99999000022. IBAN'ım TR00 9999 9000 0000 0000 0000 22, maaşım yatmamış görünüyor, kontrol eder misiniz?"
+T0029,M1021,sube,2026-09-29,"Ekstremde tanımadığım yurt dışı harcamalar var, ben yapmadım!"
+T0030,M1001,web,2026-09-30,İnternet şubesinde sürekli oturum zaman aşımı hatası alıyorum.
+T0031,M1011,eposta,2026-09-30,Kredi kartı limitimi artırmak istiyorum.
+T0032,M1008,web,2026-10-01,"Taksitlerimi ödeyemiyorum, işimi kaybettim. Ne yapabilirim?"
+T0033,M1010,mobil,2026-10-01,"Bankanızdan aradılar, telefonuma gelen kodu istediler, verdim. Sorun olur mu?"
+T0034,M1022,sube,2026-09-30,Kartım çalışmıyor.
+T0035,M1020,web,2026-09-30,"Üç haftadır aynı şikayeti yapıyorum, kimse dönmüyor. Bir yetkiliyle görüşmek istiyorum."
+T0036,M1027,sube,2026-09-30,"EFT'yi yanlış IBAN'a gönderdim, 3510,30 TL. Geri alabilir miyim?"
+T0037,M1024,eposta,2026-09-29,Hesabımı kapatmak istiyorum.
+T0038,M1022,eposta,2026-09-29,"Uygulama her açılışta çöküyor, güncelledim yine olmadı."
+T0039,M1025,eposta,2026-09-30,Şubeleriniz cumartesi açık mı?
+T0040,M1018,eposta,2026-09-30,"Merhaba ben Hakan Kurmaca, kart numaram 9999 0000 0000 0018, son ödeme tarihim hafta sonuna denk geldi, faiz işler mi?"

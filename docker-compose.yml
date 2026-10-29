@@ -1,0 +1,35 @@
+# Geliştirme ortamı servisleri (Hafta 1): app (Python kodu + mock API) ve ollama.
+# ollama servisi "ollama" profilindedir: Windows/Linux'ta .env'de COMPOSE_PROFILES=ollama,
+# Mac'te boş bırakılır ve host'taki Ollama kullanılır.
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+    working_dir: /workspace
+    environment:
+      PYTHONPATH: /workspace/src   # "import asistan" her yerden çalışsın
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "8000:8000"   # mock API
+      - "8501:8501"   # Streamlit (Hafta 5)
+    extra_hosts:
+      # Linux'ta host.docker.internal adresini tanımlar (Mac/Windows'ta zaten vardır)
+      - "host.docker.internal:host-gateway"
+    command: sleep infinity
+
+  ollama:
+    image: ollama/ollama:0.40.12
+    profiles: ["ollama"]
+    volumes:
+      - ollama_modeller:/root/.ollama
+    ports:
+      - "11434:11434"
+
+volumes:
+  ollama_modeller:

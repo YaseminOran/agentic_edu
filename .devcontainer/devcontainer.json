@@ -1,0 +1,21 @@
+// VS Code Dev Container tanımı (Hafta 1).
+// docker-compose.yml'deki app servisine bağlanır; açılışta mock API'yi arka planda başlatır.
+{
+  "name": "Agentic Eğitim – Talep Asistanı",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "postStartCommand": "nohup uvicorn mock_api.main:app --host 0.0.0.0 --port 8000 > /tmp/mock_api.log 2>&1 &",
+  "forwardPorts": [8000, 8501],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+}

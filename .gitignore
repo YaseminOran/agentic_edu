@@ -1,0 +1,14 @@
+# Git'e girmeyecek dosyalar (Hafta 1).
+# .env gizli anahtarları içerir; asla commit edilmez.
+.env
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Üretilen çıktılar
+eval/sonuclar/
+data/indeks/
+*.faiss
+*.pkl

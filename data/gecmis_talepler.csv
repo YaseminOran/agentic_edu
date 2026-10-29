@@ -1,0 +1,49 @@
+talep_id,musteri_no,tarih,kategori,ozet,cozum,durum
+G0002,M1001,2025-12-08,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0001,M1001,2026-05-29,guvenlik,Şüpheli SMS bildirimi,"Oltalama uyarısı yapıldı, kart bloke edildi.",cozuldu
+G0004,M1003,2025-09-27,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0003,M1003,2026-06-21,kart,Kart aidatı iadesi talebi,Aidat iadesi prosedüre göre yapıldı.,cozuldu
+G0005,M1004,2026-03-26,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0006,M1004,2026-06-21,kart,Kart aidatı iadesi talebi,Aidat iadesi prosedüre göre yapıldı.,cozuldu
+G0007,M1005,2025-10-20,guvenlik,Şüpheli SMS bildirimi,"Oltalama uyarısı yapıldı, kart bloke edildi.",cozuldu
+G0010,M1006,2025-09-04,kart,Mükerrer market harcaması,"İtiraz kaydı açıldı, tutar iade edildi.",cozuldu
+G0008,M1006,2026-07-11,kart,Mükerrer market harcaması,"İtiraz kaydı açıldı, tutar iade edildi.",cozuldu
+G0009,M1006,2026-09-06,guvenlik,Tanınmayan yurt dışı işlem,"Kart bloke edildi, itiraz süreci başlatıldı.",temsilcide
+G0011,M1007,2026-02-19,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0014,M1008,2025-12-05,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0013,M1008,2026-04-15,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0012,M1008,2026-07-03,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0015,M1011,2025-08-31,kart,Limit artırma talebi,"Gelir belgesi istendi, müşteri dönüş yapmadı.",acik
+G0016,M1014,2025-10-18,dijital_kanal,Mobil uygulama giriş hatası,Cihaz eşleştirmesi sıfırlandı.,cozuldu
+G0017,M1014,2026-01-16,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0019,M1015,2025-08-31,kredi,Erken kapama tutarı sorgusu,Erken kapama tutarı ve ücreti bildirildi.,cozuldu
+G0018,M1015,2026-05-05,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0020,M1015,2026-07-25,dijital_kanal,Şifre sıfırlama SMS'i gelmiyor,Telefon numarası güncellemesi için şubeye yönlendirildi.,cozuldu
+G0022,M1016,2025-10-09,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0021,M1016,2026-07-27,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0023,M1017,2025-10-15,dijital_kanal,Şifre sıfırlama SMS'i gelmiyor,Telefon numarası güncellemesi için şubeye yönlendirildi.,cozuldu
+G0025,M1017,2026-03-03,kredi,Erken kapama tutarı sorgusu,Erken kapama tutarı ve ücreti bildirildi.,cozuldu
+G0024,M1017,2026-08-29,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0026,M1020,2026-06-05,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0027,M1021,2026-04-26,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0029,M1022,2025-09-04,dijital_kanal,Mobil uygulama giriş hatası,Cihaz eşleştirmesi sıfırlandı.,cozuldu
+G0028,M1022,2026-09-18,kart,Mükerrer market harcaması,"İtiraz kaydı açıldı, tutar iade edildi.",cozuldu
+G0031,M1023,2025-12-23,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0032,M1023,2026-01-08,kredi,Erken kapama tutarı sorgusu,Erken kapama tutarı ve ücreti bildirildi.,cozuldu
+G0030,M1023,2026-07-17,kart,Limit artırma talebi,"Gelir belgesi istendi, müşteri dönüş yapmadı.",acik
+G0034,M1024,2026-02-10,kart,Kart aidatı iadesi talebi,Aidat iadesi prosedüre göre yapıldı.,cozuldu
+G0033,M1024,2026-03-02,kart,Mükerrer market harcaması,"İtiraz kaydı açıldı, tutar iade edildi.",cozuldu
+G0036,M1026,2026-02-14,guvenlik,Şüpheli SMS bildirimi,"Oltalama uyarısı yapıldı, kart bloke edildi.",cozuldu
+G0037,M1026,2026-02-26,guvenlik,Şüpheli SMS bildirimi,"Oltalama uyarısı yapıldı, kart bloke edildi.",cozuldu
+G0035,M1026,2026-04-14,kart,Mükerrer market harcaması,"İtiraz kaydı açıldı, tutar iade edildi.",cozuldu
+G0040,M1027,2026-06-26,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0038,M1027,2026-07-25,kredi,Taksit erteleme talebi,Yapılandırma için temsilciye aktarıldı.,temsilcide
+G0039,M1027,2026-09-11,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0043,M1028,2026-02-10,kredi,Erken kapama tutarı sorgusu,Erken kapama tutarı ve ücreti bildirildi.,cozuldu
+G0042,M1028,2026-07-29,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0041,M1028,2026-08-07,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0045,M1029,2026-04-16,hesap,FAST transferi karşıya geçmedi,Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.,cozuldu
+G0046,M1029,2026-05-31,hesap,Hesap işletim ücreti şikayeti,"Ücret iadesi reddedildi, gerekçe bildirildi.",cozuldu
+G0044,M1029,2026-08-12,dijital_kanal,Şifre sıfırlama SMS'i gelmiyor,Telefon numarası güncellemesi için şubeye yönlendirildi.,cozuldu
+G0048,M1030,2025-11-01,dijital_kanal,Şifre sıfırlama SMS'i gelmiyor,Telefon numarası güncellemesi için şubeye yönlendirildi.,cozuldu
+G0047,M1030,2026-08-13,kart,Limit artırma talebi,"Gelir belgesi istendi, müşteri dönüş yapmadı.",acik
