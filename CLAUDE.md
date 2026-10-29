@@ -23,11 +23,11 @@ riskli durumları insana aktaran bir asistan. Sistem 5 hafta boyunca katman katm
 .devcontainer/  docker-compose.yml  requirements.txt  .env.example  kontrol.py
 data/          sentetik veriler (talepler, musteriler, kart_islemleri, gecmis_talepler, prosedurler/)
 mock_api/      FastAPI sahte servisler
-notebooks/     keşif notebook'ları (numaralı: 01_isinma.ipynb ...)
+haftalar/      her haftanın klasörü: haftalar/hafta-N/ içinde GOREVLER.md (katılımcı görevleri),
+               numaralı notebook'lar (01_isinma.ipynb ...) ve egitmen_notu.md
 src/asistan/   asıl proje kodu
 prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          test_seti.csv, ortak_set.csv, calistir.py
-docs/          haftalık eğitmen notları ve örnek çözümler
 
 ## Değişmez kurallar
 1. GERÇEK VERİ YOK. Tüm isim, TCKN, kart no, IBAN, tutar sentetik ve açıkça sahte olmalı.
@@ -62,4 +62,5 @@ Her hafta bir öncekinin üzerine kurulur.
 - Kod yazmadan önce kısa bir plan sun ve onay bekle.
 - Her adımdan sonra çalıştırıp test et; hata varsa düzelt, sonra devam et.
 - Bitince: neyi değiştirdiğini, nasıl çalıştırılacağını ve eğitimde vurgulanacak
-  noktaları docs/hafta-N.md dosyasına yaz.
+  noktaları haftalar/hafta-N/egitmen_notu.md dosyasına, katılımcı görevlerini
+  haftalar/hafta-N/GOREVLER.md dosyasına yaz.

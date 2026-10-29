@@ -23,7 +23,7 @@ class Siniflandirma(BaseModel):
 
 
 # HAFTA 1 GÖREVİ: Bu sistem mesajı bilerek basit tutuldu. Değerlendirme sonuçlarına bakarak
-# iyileştirin: karar sırası, sınır durumları, birkaç örnek (few-shot) ... (bkz. docs/hafta-1.md)
+# iyileştirin: karar sırası, sınır durumları, birkaç örnek (few-shot) ... (bkz. haftalar/hafta-1/GOREVLER.md)
 SISTEM_MESAJI = """Sen Örnek Bank'ın müşteri talep asistanısın. Gelen talebi sınıflandır ve kısa bir yanıt taslağı yaz.
 
 Kategoriler:

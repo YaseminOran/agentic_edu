@@ -35,14 +35,15 @@ python eval/calistir.py    # değerlendirme
 Mock API container açılınca otomatik başlar (http://localhost:8000/docs). Başlamadıysa:
 `uvicorn mock_api.main:app --host 0.0.0.0 --port 8000`
 
+Her haftanın görevleri: `haftalar/hafta-N/GOREVLER.md` (Hafta 1: [haftalar/hafta-1/GOREVLER.md](haftalar/hafta-1/GOREVLER.md))
+
 ## Klasörler
 
 ```
 data/          sentetik veriler ve prosedürler (yeniden üretmek için: python data/uret.py)
 mock_api/      FastAPI sahte banka servisleri
-notebooks/     keşif notebook'ları
+haftalar/      haftalık klasörler: GOREVLER.md, notebook'lar, eğitmen notu
 src/asistan/   asistanın kodu – ortak arayüz: cevapla(talep, musteri_no) -> dict
 prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          değerlendirme setleri ve çalıştırıcı
-docs/          haftalık notlar
 ```

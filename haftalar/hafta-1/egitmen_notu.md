@@ -14,7 +14,8 @@
 | Asistan | `src/asistan/ayarlar.py`, `src/asistan/asistan.py` | Tek LLM çağrısı + Pydantic şema |
 | Değerlendirme | `eval/test_seti.csv` (30), `eval/ortak_set.csv` (10), `eval/calistir.py` | |
 | Kontrol | `kontrol.py` | 8 kontrol, ✅/⚠️/❌ |
-| Notebook | `notebooks/01_isinma.ipynb` | Isınma ve yapılandırılmış çıktı |
+| Notebook | `haftalar/hafta-1/01_isinma.ipynb` | Isınma ve yapılandırılmış çıktı |
+| Görevler | `haftalar/hafta-1/GOREVLER.md` | Katılımcıya dağıtılan görev listesi |
 
 ### Verinin "açıkça sahte" olması
 - İsimler: gerçek ad + sahte olduğu belli soyad (`Örnek`, `Deneme`, `Sahteoğlu`, `Testçi`...)
@@ -86,18 +87,14 @@ Kategori kuralları:
    değer 400 hatası verir). Tekrarlanabilirlik için yerel modelde `temperature=0`, Claude'da yapılandırılmış çıktı
    ve iyi tanımlı etiketlere güveniyoruz.
 
-## 6. Katılımcı görevleri (Hafta 1)
+## 6. Katılımcı görevleri
 
-`src/asistan/asistan.py` içindeki `SISTEM_MESAJI` bilerek basit bırakıldı. Görevler:
-
-1. `python eval/calistir.py` ile başlangıç skorunu alın, `eval/sonuclar/` altındaki CSV'de yanlışları inceleyin.
-2. Hataları gruplayın: hangi davranışlar karışıyor? (Tipik: `insan_onayi` ↔ `temsilciye_aktar`, kötü niyetli
-   taleplerin `guvenlik` yerine başka kategoriye düşmesi, kapsam dışı taleplere yanıt verilmesi.)
-3. Sistem mesajına **karar sırasını** ekleyin (bölüm 3'teki tablo).
-4. Sınır durumlar için 3–5 **few-shot örneği** ekleyin. Dikkat: test setindeki talepleri birebir kopyalamayın
-   (veri sızıntısı!); `data/talepler.csv`'den veya kendi yazdığınız örneklerden seçin.
-5. Aynı değişikliği yerel ve bulut modelde ölçün; farkı tartışın.
-6. Son olarak `--set ortak_set` skorunuzu paylaşın (sınıf karşılaştırması).
+Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 saat). Eğitmen için ipuçları:
+- Görev 3'te tipik hatalar: `insan_onayi` ↔ `temsilciye_aktar` karışması, kötü niyetli taleplerin `guvenlik`
+  yerine konuya göre (`kart`, `hesap`) sınıflanması, kapsam dışı taleplere yanıt verilmesi.
+- Görev 4'te karar sırası katılımcıya verilmez; `PRS-GNL-001`'de bulmaları beklenir (prosedür okuma alışkanlığı,
+  Hafta 3'teki RAG'e köprü).
+- Görev 6'da ortak sete göre ayar yapılmaması özellikle vurgulanmalı (test setine aşırı uyum).
 
 Çözüm `hafta-1` dalındadır.
 
