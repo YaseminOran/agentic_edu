@@ -44,6 +44,18 @@ def arayuz_hatasi(cikti) -> str:
     return ""
 
 
+def karisiklik_matrisi_yaz(sonuclar: list[dict]) -> None:
+    """Satır: beklenen davranış, sütun: tahmin. Köşegen dışı her sayı bir karışıklıktır (Hafta 1 bonus)."""
+    davranislar = ["yanitla", "netlestir", "temsilciye_aktar", "insan_onayi", "reddet"]
+    kisa = {"yanitla": "yanit", "netlestir": "netl", "temsilciye_aktar": "temsl", "insan_onayi": "onay", "reddet": "red"}
+    print("\nKarışıklık matrisi (satır = beklenen, sütun = tahmin):")
+    print(" " * 18 + "".join(f"{kisa[d]:>7}" for d in davranislar))
+    for beklenen in davranislar:
+        satir = [sum(1 for r in sonuclar if r["beklenen_davranis"] == beklenen and r["tahmin_davranis"] == t)
+                 for t in davranislar]
+        print(f"  {beklenen:<16}" + "".join(f"{(n or '.'):>7}" for n in satir))
+
+
 def oran(pay: int, payda: int) -> str:
     return f"{pay}/{payda} (%{100 * pay / payda:.0f})" if payda else "-"
 
@@ -120,6 +132,8 @@ def main() -> int:
         gruplar[r["zorluk"]].append(r)
     for zorluk, grup in gruplar.items():
         print(f"  {zorluk:<13} {oran(sum(r['davranis_dogru'] for r in grup), len(grup))}")
+
+    karisiklik_matrisi_yaz(sonuclar)
 
     klasor = EVAL_KLASORU / "sonuclar"
     klasor.mkdir(exist_ok=True)

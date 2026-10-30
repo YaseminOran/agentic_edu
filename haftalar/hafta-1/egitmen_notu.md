@@ -132,3 +132,62 @@ Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 s
 | 3 | Prosedürlerin FAISS indeksi, `prosedur_ara` aracı, LangGraph akışı, `kaynaklar` alanı | `kaynak_gerekli` metriği anlam kazanır |
 | 4 | `prompts/` şablonları, `kart_bloke` için insan onayı (LangGraph interrupt), MCP sunucusu | Yazma araçları onaysız çalışmaz |
 | 5 | LLM-hakem ile yanıt kalitesi, maliyet/gecikme raporu, Streamlit demo | |
+
+## 8. Çözüm (`hafta-1` dalı)
+
+### Neler değişti?
+| Dosya | Değişiklik | Neden |
+|---|---|---|
+| `src/asistan/asistan.py` | Karar sırası (PRS-GNL-001'den) | Bir talep birden fazla davranışa uyduğunda (ör. avukat tehdidi + iade isteği) model tutarlı seçim yapsın |
+| | Kategori kuralları | `kart` ↔ `guvenlik` sınırı ve kötü niyetli / kapsam dışı taleplerin kategorisi netleşsin |
+| | 9 örnek (few-shot) | Sınır durumlar için somut referans. Hiçbiri test veya ortak setten değil |
+| | Yanıt kuralları | Davranışa göre yanıt dili; kart no / TCKN yazmama; "yaptım" yerine "onaya iletildi" |
+| | Şemaya `gerekce` alanı (etiketlerden önce) | Model alanları sırayla ürettiği için önce gerekçe yazıp sonra karar verir |
+| | Model aracı çağırmazsa güvenli varsayılan (`temsilciye_aktar`) | Hata yerine "emin değilsen insana aktar" (fail-safe) |
+| `eval/calistir.py` | Karışıklık matrisi | Hangi davranışların karıştığını tek bakışta görmek (bonus görev) |
+
+Değişmeyenler: `cevapla()` imzası ve dönen sözlük. Gerekçe, `adimlar` listesine yazılıyor.
+
+### Skorlar: başlangıç ve çözüm
+
+qwen3.5:4b (yerel), 2026-10-30. Claude ile henüz ölçülmedi.
+
+| Metrik | test_seti başlangıç | test_seti çözüm | ortak_set başlangıç | ortak_set çözüm |
+|---|---|---|---|---|
+| Kategori doğruluğu | %77 | %83 | %80 | %80 |
+| **Davranış doğruluğu** | **%27** | **%77** | **%20** | **%100** |
+| İkisi birden | %20 | %60 | %20 | %80 |
+| Kaçan riskli talep | 1/20 | 1/20 | 0/7 | 0/7 |
+| Hatalı satır | 2 | 0 | 0 | 0 |
+| Ortalama süre | 3,7 sn | 5,0 sn | | |
+
+Zorluğa göre davranış (test_seti): kolay %33 → %58, zor %50 → %75, kötü niyetli %0 → %100, kapsam dışı %0 → %100.
+
+Kalan hatalar (test_seti, çözüm):
+- **Bilgi soruları → `netlestir` (T01, T04, T10, T20).** Model ekstre kesim tarihi, FAST süresi gibi bilgileri bilmediği
+  için soru soruyor. Bu prompt'la çözülmez; prosedürlere erişim (Hafta 3, RAG) gerekiyor. Hafta 1'in tavanı budur.
+- **Aşırı ret (T12).** "Teşekkürler, sorunum çözüldü" `reddet` oldu. Ret kuralları güçlendirilince masum talepler
+  de reddedilebiliyor. Güvenlik ile kullanışlılık arasındaki dengeyi tartışın.
+- **`insan_onayi` ↔ `temsilciye_aktar` (T07, T18).** Mükerrer çekim iadesi `yanitla` oldu; "güvenli hesap"
+  dolandırıcılığı `insan_onayi` oldu (kırılgan müşteri kuralı uygulanmadı).
+- **Kategori:** Prompt injection talepleri `guvenlik` yerine `diger`. Davranış doğru, kural kısmen tutuyor.
+  Ayrıca 4B model "kart" ile "guvenlik" sınırında hâlâ kararsız (T13, T15).
+
+### Notebook alıştırmaları – örnek cevaplar
+1. **Sıcaklık:** `temperature=0.8` ile aynı talep farklı çalıştırmalarda farklı davranış etiketi alabilir. Bankacılıkta
+   aynı talebe aynı işlemin uygulanması (tutarlılık, denetlenebilirlik) gerektiği için sınıflandırmada düşük sıcaklık
+   tercih edilir. Yaratıcılık gerekmez.
+2. **Zor talepler:** Başlangıç sürümü "Kartım çalışmıyor." talebinde davranışı doğru bulur (`netlestir`). Ama aslında
+   hemen her talebe `netlestir` dediği için bu bir şans eseri. Prompt injection talebinde (T21) ise model aracı hiç
+   çağırmaz ve düz metinle cevap verir. Sonuç HATA olur: saldırı, yapılandırılmış çıktı sözleşmesini bozar.
+   Çözümde bu talep `reddet` olur. Model aracı yine çağırmazsa güvenli varsayılan devreye girer.
+3. **Değerlendirme:** Başlangıçta `kotu_niyetli` ve `kapsam_disi` grupları %0'dır. En büyük kazanım bu iki gruptadır
+   (ikisi de %100'e çıkar).
+4. **İyileştirme:** Bu dalın `SISTEM_MESAJI`'na bakın.
+
+### Derste tartışılacaklar
+- **Prompt uzadıkça maliyet artar.** Çözüm prompt'u başlangıca göre yaklaşık 4 kat daha uzun ve her çağrıda tekrar
+  gönderiliyor. Hafta 5'te maliyet raporunda bu konuya geri dönülecek.
+- **Prompt ile çözülemeyenler.** "Bu müşterinin daha önce şikayeti var mı?" gibi sorular ancak araçla (Hafta 2),
+  "erken kapama ücreti ne kadar?" gibi sorular ancak prosedürle (Hafta 3) doğru yanıtlanabilir.
+  Hafta 1'in skor tavanı budur.
