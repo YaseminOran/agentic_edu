@@ -106,10 +106,11 @@ def ollama_modelleri():
 
 
 def yerel_model_cagrisi():
-    from asistan.ayarlar import model_getir
+    from asistan import cevapla
 
-    cevap = model_getir("yerel").invoke("Sadece 'tamam' yaz.")
-    return f"yanıt: {cevap.content.strip()[:30]!r}"
+    # Düz sohbet değil, asistanın kullandığı yapılandırılmış çıktı yolu test edilir
+    sonuc = cevapla("Kartımı kaybettim.", musteri_no="M1001", model_turu="yerel")
+    return f"cevapla() -> {sonuc['kategori']} / {sonuc['davranis']}"
 
 
 def claude_cagrisi():
@@ -118,7 +119,7 @@ def claude_cagrisi():
     from asistan.ayarlar import model_getir
 
     cevap = model_getir("bulut").invoke("Sadece 'tamam' yaz.")
-    return f"yanıt: {cevap.text.strip()[:30]!r}"
+    return f"yanıt: {cevap.text.strip()[:30]!r}"  # yapılandırılmış çıktı eval'de test edilir
 
 
 if __name__ == "__main__":

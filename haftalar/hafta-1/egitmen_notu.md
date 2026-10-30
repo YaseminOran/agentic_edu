@@ -44,6 +44,11 @@ python data/uret.py                        # veriyi yeniden üret (aynı çıkt�
 Mock API dev container açılınca `postStartCommand` ile başlar. Container dışında çalışılıyorsa:
 `uvicorn mock_api.main:app --port 8000` ve `.env` içinde `OLLAMA_URL=http://localhost:11434`.
 
+**Bilinen tuzak (Mac + Homebrew Ollama):** Apple Silicon'da `qwen3.5:4b` MLX sürümüne çözülür. Homebrew paketinde
+MLX'in yapılandırılmış çıktı kütüphanesi (`libollama_xgrammar.dylib`) yok, bu yüzden `format`/`json_schema` istekleri
+`structured output is unavailable` (501) hatası verir. Kodumuz yerel modelde `function_calling` kullandığı için bu
+sorundan etkilenmez. Ama katılımcı kendi denemesinde `json_schema` kullanırsa bu hatayı görür.
+
 **Bilinen tuzak:** 8000 portunu başka bir servis kullanıyorsa `kontrol.py` "yanıt verdi ama bizim mock API
 değil" der. Başka port seçip `MOCK_API_URL`'i güncelleyin.
 
@@ -67,13 +72,34 @@ Kategori kuralları:
 
 ## 4. Başlangıç skorları (main dalı, değiştirilmemiş sistem mesajı)
 
-*Henüz ölçülmedi.* qwen3.5:4b ve Claude ile `python eval/calistir.py` sonuçları buraya eklenecek.
+qwen3.5:4b (yerel, MLX), 2026-10-30. Claude ile henüz ölçülmedi.
+
+| Metrik | test_seti (30) | ortak_set (10) |
+|---|---|---|
+| Kategori doğruluğu | 23/30 (%77) | 8/10 (%80) |
+| Davranış doğruluğu | 8/30 (%27) | 2/10 (%20) |
+| İkisi birden | 6/30 (%20) | 2/10 (%20) |
+| Kaçan riskli talep | 1/20 | 0/7 |
+| Hatalı satır | 2 | 0 |
+| Ortalama süre | 3,7 sn | |
+
+Davranışa göre (test_seti): kolay %33, zor %50, kötü niyetli %0, kapsam dışı %0.
+
+Gözlemler (derste kullanın):
+- Model 28 geçerli tahminin **21'inde `netlestir`** diyor. Karar kuralı yokken "emin değilim, sorayım" moduna düşüyor.
+  "Kaçan riskli talep" metriğinin düşük olmasının nedeni bu: model neredeyse hiç `yanitla` demiyor.
+  Yani düşük risk metriği tek başına iyi bir sistem anlamına gelmiyor.
+- Kategori doğruluğu (%77) davranıştan çok daha iyi: model konuyu anlıyor, ama *ne yapacağını* bilmiyor.
+- 2 hatalı satır (T21, T23) prompt injection talepleri: model aracı çağırmayıp düz metinle cevap veriyor.
+  Saldırı, yapılandırılmış çıktı sözleşmesini de bozabiliyor.
 
 ## 5. Eğitimde vurgulanacak noktalar
 
 1. **LLM bir fonksiyon değil, olasılıksal bir bileşendir.** Notebook bölüm 4: serbest metin çıktısı
-   ayrıştırılamaz. `with_structured_output(..., method="json_schema")` modelin şemaya uymasını *zorunlu* kılar.
-   (Ollama'da `format` parametresi, Claude'da `output_config.format` ile; ikisi de aynı LangChain çağrısı.)
+   ayrıştırılamaz. Çözüm `with_structured_output()`. İki yöntem kullanıyoruz:
+   - Claude: `method="json_schema"`. API çıktının şemaya uymasını *zorunlu* kılar (`output_config.format`).
+   - Ollama: `method="function_calling"`. Şema bir araç olarak verilir, uyum zorunlu değildir.
+   Bu fark kendi başına bir ders: yerel modelde nadiren görülen HATA satırları bu zorlamanın olmamasından gelir.
 2. **Ortak arayüz sözleşmesi.** `cevapla(talep, musteri_no) -> dict` 5 hafta boyunca değişmeyecek; içi değişecek.
    Değerlendirme bu sözleşmeye bağlı olduğu için her hafta karşılaştırılabilir skor elde ederiz.
 3. **Önce değerlendirme, sonra iyileştirme.** Prompt'u "hissederek" değil, `eval/calistir.py` skoruna bakarak

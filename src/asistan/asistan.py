@@ -50,12 +50,19 @@ def cevapla(talep: str, musteri_no: str, model_turu: str = "yerel") -> dict:
     Dönen sözlük: {kategori, davranis, yanit, kaynaklar: list, adimlar: list}
     musteri_no Hafta 1'de kullanılmıyor; Hafta 2'de araçlar müşteri bilgisini bununla çeker.
     """
-    # method="json_schema": model çıktısı şemaya uymak ZORUNDA (Ollama'da format, Claude'da output_config)
-    model = model_getir(model_turu).with_structured_output(Siniflandirma, method="json_schema")
+    # Yapılandırılmış çıktı yöntemi:
+    # - Claude: "json_schema" -> API, çıktının şemaya uymasını ZORUNLU kılar (output_config.format).
+    # - Ollama: "function_calling" -> şema modele bir araç olarak verilir, model o aracı "çağırır".
+    #   Mac'teki MLX motoru json_schema'yı desteklemeyebildiği için yerelde bunu kullanıyoruz.
+    #   Bedeli: zorlama yok, model nadiren şemaya uymayan çıktı üretebilir (eval'de HATA satırı).
+    yontem = "function_calling" if model_turu == "yerel" else "json_schema"
+    model = model_getir(model_turu).with_structured_output(Siniflandirma, method=yontem)
     sonuc: Siniflandirma = model.invoke([
         ("system", SISTEM_MESAJI),
         ("human", talep),
     ])
+    if sonuc is None:  # model aracı çağırmadan düz metin döndü (ör. talimat ezmeye çalışan taleplerde)
+        raise ValueError("Model yapılandırılmış çıktı üretmedi (aracı çağırmadı).")
 
     return {
         "kategori": sonuc.kategori,
