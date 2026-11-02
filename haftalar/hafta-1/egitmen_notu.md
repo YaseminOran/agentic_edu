@@ -14,7 +14,7 @@
 | Asistan | `src/asistan/ayarlar.py`, `src/asistan/asistan.py` | Tek LLM çağrısı + Pydantic şema |
 | Değerlendirme | `eval/test_seti.csv` (30), `eval/ortak_set.csv` (10), `eval/calistir.py` | |
 | Kontrol | `kontrol.py` | 8 kontrol, ✅/⚠️/❌ |
-| Notebook | `haftalar/hafta-1/01_isinma.ipynb` | Isınma ve yapılandırılmış çıktı |
+| Notebook | `haftalar/hafta-1/01_isinma.ipynb` | Isınma: aynı soru yerel modele ve Claude'a |
 | Görevler | `haftalar/hafta-1/GOREVLER.md` | Katılımcıya dağıtılan görev listesi |
 
 ### Verinin "açıkça sahte" olması
@@ -99,8 +99,8 @@ Gözlemler (derste kullanın):
 
 ## 5. Eğitimde vurgulanacak noktalar
 
-1. **LLM bir fonksiyon değil, olasılıksal bir bileşendir.** Notebook bölüm 4: serbest metin çıktısı
-   ayrıştırılamaz. Çözüm `with_structured_output()`. İki yöntem kullanıyoruz:
+1. **LLM bir fonksiyon değil, olasılıksal bir bileşendir.** Serbest metin çıktısı güvenilir şekilde
+   ayrıştırılamaz. Çözüm `with_structured_output()` (`src/asistan/asistan.py`). İki yöntem kullanıyoruz:
    - Claude: `method="json_schema"`. API çıktının şemaya uymasını *zorunlu* kılar (`output_config.format`).
    - Ollama: `method="function_calling"`. Şema bir araç olarak verilir, uyum zorunlu değildir.
    Bu fark kendi başına bir ders: yerel modelde nadiren görülen HATA satırları bu zorlamanın olmamasından gelir.
@@ -120,6 +120,18 @@ Gözlemler (derste kullanın):
 ## 6. Katılımcı görevleri
 
 Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 saat). Eğitmen için ipuçları:
+- Görev 1 (ısınma notebook'u) tek bir konuya odaklanır: aynı soru ("Kartımı kaybettim, ne yapmalıyım?") sistem
+  mesajı olmadan yerel modele ve Claude'a sorulur. 2026-11-03 denemesi (Mac, Apple Silicon): yerel ~25 sn,
+  Claude ~10–15 sn. Çıktı token'ları yakın (~870–950), ama Claude'un cevabı neredeyse yarı uzunlukta: Claude'un
+  görünmeyen düşünme adımı da çıktı token'ına (faturaya) dahil. Bu yüzden notebook `.content` yerine `.text`
+  kullanır: düşünme açıkken Claude'un `.content` alanı düz metin değil, blok listesidir.
+  Tartışma sorularında beklenenler:
+  1. Süre makineye ve ağa bağlı. Yerelde ilk çağrı, model belleğe yüklendiği için daha yavaştır.
+  2. Yerel model uydurma adımlar yazabilir (bir denemede: "bankanız kayıp kart numarası verir, kartı iade edin").
+  3. İki model de Örnek Bank'ın prosedürünü bilmez. Bağlam bu hafta sistem mesajıyla (`asistan.py`), Hafta 3'te
+     prosedürlerle (RAG) verilir. Claude bağlam olmadığı için kimlik ve ulaşım kartını da cevaplıyor.
+  4. Ad ve kart numarası içeren bir talep buluta maskelenmeden gitmemeli (Hafta 2). Günde 10.000 talepte token
+     maliyeti ile yerel modelin kalite/hız sınırı arasındaki dengeyi tartışın.
 - Görev 3'te tipik hatalar: `insan_onayi` ↔ `temsilciye_aktar` karışması, kötü niyetli taleplerin `guvenlik`
   yerine konuya göre (`kart`, `hesap`) sınıflanması, kapsam dışı taleplere yanıt verilmesi.
 - Görev 4'te karar sırası katılımcıya verilmez; `PRS-GNL-001`'de bulmaları beklenir (prosedür okuma alışkanlığı,
