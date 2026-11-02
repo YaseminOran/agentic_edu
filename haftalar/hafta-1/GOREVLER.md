@@ -25,14 +25,18 @@
 
 **Teslim:** Her notebook'un sonundaki tartışma sorularının cevaplarını o notebook'a bir markdown hücresi olarak ekleyin.
 
-## Görev 2 – Başlangıç skoru (20 dk)
+## Görev 2 – Başlangıç skoru (35 dk)
+1. `haftalar/hafta-1/03_degerlendirme.ipynb` notebook'unu çalıştırın (15 dk). Değerlendirmenin nasıl yapıldığını
+   5 talep üzerinde adım adım göreceksiniz.
+2. Aynı işi test setindeki 30 talebin hepsinde yapan betiği terminalde çalıştırın:
 ```bash
 python eval/calistir.py
 ```
 Çıktıdaki özet tabloyu bir yere not edin. Bu sizin **referans skorunuz**.
 Ayrıntılı sonuçlar `eval/sonuclar/` altında bir CSV'dedir; açıp yanlış satırları inceleyin.
 
-**Teslim:** Kategori doğruluğu, davranış doğruluğu ve "kaçan riskli talep" sayısı.
+**Teslim:** Kategori doğruluğu, davranış doğruluğu ve "kaçan riskli talep" sayısı. Ayrıca notebook'un sonundaki
+tartışma sorularının cevapları (notebook'a bir markdown hücresi olarak).
 
 ## Görev 3 – Hata analizi (30 dk)
 Yanlış satırları gruplayın. Her grup için bir cümleyle "model neden yanılıyor?" sorusunu cevaplayın.
@@ -86,6 +90,6 @@ Ortak sete göre prompt **ayarlamayın**: bu set, gerçek hayatta göremeyeceği
 ## Hafta sonu kontrol listesi
 - [ ] `python kontrol.py` hatasız
 - [ ] `python eval/calistir.py` hatasız ve skorunuz referans skorunuzdan yüksek
-- [ ] İki notebook'taki tartışma soruları cevaplandı
+- [ ] Üç notebook'taki tartışma soruları cevaplandı
 
 Hazır çözüm: `git checkout hafta-1` (önce kendi çözümünüzü commit edin!)
