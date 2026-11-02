@@ -52,6 +52,23 @@ sorundan etkilenmez. Ama katılımcı kendi denemesinde `json_schema` kullanırs
 **Bilinen tuzak:** 8000 portunu başka bir servis kullanıyorsa `kontrol.py` "yanıt verdi ama bizim mock API
 değil" der. Başka port seçip `MOCK_API_URL`'i güncelleyin.
 
+**Bilinen tuzak (notebook kernel'i):** VS Code notebook'u başka bir Python ortamıyla (ör. bir conda ortamı)
+açarsa ilk hücrede `ModuleNotFoundError: No module named 'pydantic'` hatası çıkar. Hata `from asistan.ayarlar import ...`
+satırında görünse de kod ve klasör yapısı doğrudur: `asistan` paketi bulunur, eksik olan o ortamda kurulu olmayan paketlerdir.
+- **Kontrol:** Yeni bir hücrede `import sys; print(sys.executable)` çalıştırın. Çıktı projenin ortamını göstermeli
+  (Dev Container'da `/usr/local/bin/python`, container dışında `.../softtech_agentic/.venv/bin/python`).
+- **Çözüm:** Notebook'un sağ üstündeki kernel adına tıklayın → **Başka Bir Çekirdek Seçin…** (*Select Another Kernel…*)
+  → **Python Ortamları…** (*Python Environments…*) → projenin ortamı (`.venv`). Ardından **Yeniden Başlat** ve
+  **Tümünü Çalıştır**. **Mevcut Jupyter Sunucusu…** (*Existing Jupyter Server…*) seçilmemeli, o seçenek bir sunucu adresi ister.
+- Bilgisayarında çok sayıda conda ortamı olan katılımcılarda VS Code yanlış ortamı bu notebook için hatırlar.
+  Pencereyi yenilemek (*Reload Window*) veya terminalde `source .venv/bin/activate` çalıştırmak **yetmez**,
+  çünkü terminal ile notebook'un kernel'i ayrıdır. Kernel elle seçilmelidir.
+
+**Bilinen tuzak (notebook commit'i):** VS Code notebook'u kaydederken hücre çıktılarını ve yerel kernel adını
+(ör. `.venv (3.12.8)`, `rag_deploy`) dosyaya yazar. Notebook'ta değişiklik yapıp commit etmeden önce çıktıları
+temizleyin (**Tüm Çıktıları Temizle** / *Clear All Outputs*) ve `metadata.kernelspec` alanının
+`"Python 3"` / `python3` kaldığını kontrol edin. Aksi halde katılımcılar notebook'u sizin çıktılarınızla açar.
+
 ## 3. Etiket tanımları ve karar sırası
 
 Değerlendirme setinin etiketleri bu kurallara göre verildi (`PRS-GNL-001` bölüm 1 ile aynı):
