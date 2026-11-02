@@ -136,6 +136,17 @@ Gözlemler (derste kullanın):
 7. **Güncel Claude modelleri `temperature` kabul etmez** (Sonnet 5.5 / Opus 5.5 / Haiku 5.5'te varsayılan dışı
    değer 400 hatası verir). Tekrarlanabilirlik için yerel modelde `temperature=0`, Claude'da yapılandırılmış çıktı
    ve iyi tanımlı etiketlere güveniyoruz.
+8. **"Kategoriyi neden model veriyor, CSV'ye biz yazamaz mıydık?"** Katılımcılardan gelebilecek bir soru.
+   - **Gerçek hayatta talepler etiketsiz gelir.** Müşteri sadece metin yazar. Bugün bu kararı bir çalışan veriyor,
+     asistanın işi aynı kararı her gün gelecek yeni, daha önce görülmemiş taleplerde vermek. Kategoriyi biz yazarsak
+     asistanın çözmesi gereken işi baştan biz çözmüş oluruz. Bu yüzden `data/talepler.csv` dosyasında bilerek
+     kategori sütunu yok.
+   - **Kendi yazdığımız etiketler cevap anahtarıdır.** `eval/test_seti.csv` dosyasındaki `beklenen_kategori` ve
+     `beklenen_davranis` modele gösterilmez, sadece modelin cevabını karşılaştırmak için kullanılır
+     (bkz. `03_degerlendirme.ipynb`). Modele verilseydi skor %100 çıkardı ama hiçbir şey ölçülmezdi.
+   - **Kategori kendi başına amaç değil, sonraki adımları belirler:** talebin hangi birime gideceği (yönlendirme),
+     ne kadar acil olduğu (`guvenlik` beklemez), Hafta 3'te hangi prosedürde arama yapılacağı (RAG'de aramayı
+     daraltır) ve raporlama ("bu ay en çok hangi konuda şikayet geldi?").
 
 ## 6. Katılımcı görevleri
 
