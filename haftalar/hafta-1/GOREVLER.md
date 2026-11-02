@@ -16,11 +16,14 @@
    - `eval/test_seti.csv` – asistanın ölçüleceği 30 talep
    - `data/prosedurler/PRS-GNL-001_sikayet_yonetimi_ve_temsilci_aktarimi.md` – bankanın kuralları
 
-## Görev 1 – Isınma notebook'u (20 dk)
-`haftalar/hafta-1/01_isinma.ipynb` notebook'unu baştan sona çalıştırın. Aynı soruyu yerel modele ve Claude'a
-sorup cevapları, süreleri ve token sayılarını karşılaştıracaksınız.
+## Görev 1 – Notebook'lar (45 dk)
+İki notebook'u sırayla baştan sona çalıştırın:
+1. `haftalar/hafta-1/01_isinma.ipynb` (20 dk): Aynı soruyu yerel modele ve Claude'a sorup cevapları, süreleri ve
+   token sayılarını karşılaştıracaksınız.
+2. `haftalar/hafta-1/02_yapilandirilmis_cikti.ipynb` (25 dk): `data/talepler.csv` dosyasındaki talepleri önce
+   serbest metinle, sonra bir şemayla sınıflandırıp aradaki farkı göreceksiniz.
 
-**Teslim:** Notebook'un sonundaki 4 tartışma sorusunun cevaplarını notebook'a bir markdown hücresi olarak ekleyin.
+**Teslim:** Her notebook'un sonundaki tartışma sorularının cevaplarını o notebook'a bir markdown hücresi olarak ekleyin.
 
 ## Görev 2 – Başlangıç skoru (20 dk)
 ```bash
@@ -83,6 +86,6 @@ Ortak sete göre prompt **ayarlamayın**: bu set, gerçek hayatta göremeyeceği
 ## Hafta sonu kontrol listesi
 - [ ] `python kontrol.py` hatasız
 - [ ] `python eval/calistir.py` hatasız ve skorunuz referans skorunuzdan yüksek
-- [ ] Isınma notebook'undaki tartışma soruları cevaplandı
+- [ ] İki notebook'taki tartışma soruları cevaplandı
 
 Hazır çözüm: `git checkout hafta-1` (önce kendi çözümünüzü commit edin!)
