@@ -16,6 +16,7 @@
 | Kontrol | `kontrol.py` | 8 kontrol, ✅/⚠️/❌ |
 | Notebook | `haftalar/hafta-1/01_isinma.ipynb` | Isınma: aynı soru yerel modele ve Claude'a |
 | Notebook | `haftalar/hafta-1/02_yapilandirilmis_cikti.ipynb` | `talepler.csv`'yi serbest metinle ve şemayla sınıflandırma |
+| Notebook | `haftalar/hafta-1/03_degerlendirme.ipynb` | `eval/calistir.py`'nin yaptığını 5 talep üzerinde adım adım (Görev 2) |
 | Görevler | `haftalar/hafta-1/GOREVLER.md` | Katılımcıya dağıtılan görev listesi |
 
 ### Verinin "açıkça sahte" olması
@@ -165,6 +166,20 @@ Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 s
      Bu, sistem mesajına hangi kategori sınırının yazılması gerektiğini söyler.
   4. Şemada sadece `Literal[...]` listesine `"yatirim"` eklemek yeter. Serbest metinde ise ayrıştırma kodunun ve
      talimat metninin ayrı ayrı güncellenmesi gerekir.
+- Görev 2'nin notebook'u (`03_degerlendirme.ipynb`) `eval/calistir.py`'nin yaptığını 5 talep üzerinde elle yapar:
+  T01 (kolay/`yanitla`), T05 (kolay/`insan_onayi`), T15 (zor/`netlestir`), T19 (zor/`temsilciye_aktar`),
+  T26 (kapsam dışı/`reddet`). Prompt injection talepleri (T21, T23) bilerek seçilmedi: başlangıç kodunda
+  `ValueError` verebiliyorlar. Notebook'taki döngü bu hatayı yakalıyor, ama ilk denemede kafa karıştırmasın.
+  2026-11-03 denemesi (`main`, yerel model): 5 talebin 4'üne `netlestir`; kategori 4/5, davranış 2/5, kaçan riskli 0/3.
+  `hafta-1` dalında `cevapla()` çözüm sürümü olduğu için skorlar daha yüksek çıkar.
+  Tartışma sorularında beklenenler:
+  1. Cevap anahtarı modele verilirse skor %100 olur ama hiçbir şey ölçülmez (sınavda cevap anahtarını vermek gibi).
+  2. 5 talep çok az: tek bir talep skoru %20 değiştirir. 30 talep ve farklı zorluk grupları, asistanın zayıf
+     olduğu yerleri (kötü niyetli, kapsam dışı) de ölçmek için.
+  3. **0/3 güvenli olduğunu göstermez.** Asistan neredeyse her talebe `netlestir` dediği için hiçbir şeyi "kaçırmıyor",
+     ama hiçbir şeyi de doğru yapmıyor. Kaçan riskli talep metriği doğrulukla birlikte okunmalı (bkz. bölüm 4).
+  4. Test setini görerek yapılan iyileştirme o 30 talebe aşırı uyabilir. Ortak set görülmemiş talepleri temsil eder,
+     bu yüzden ona göre ayar yapılmaz (Görev 6).
 - Görev 3'te tipik hatalar: `insan_onayi` ↔ `temsilciye_aktar` karışması, kötü niyetli taleplerin `guvenlik`
   yerine konuya göre (`kart`, `hesap`) sınıflanması, kapsam dışı taleplere yanıt verilmesi.
 - Görev 4'te karar sırası katılımcıya verilmez; `PRS-GNL-001`'de bulmaları beklenir (prosedür okuma alışkanlığı,
