@@ -16,10 +16,11 @@
    - `eval/test_seti.csv` – asistanın ölçüleceği 30 talep
    - `data/prosedurler/PRS-GNL-001_sikayet_yonetimi_ve_temsilci_aktarimi.md` – bankanın kuralları
 
-## Görev 1 – Isınma notebook'u (45 dk)
-`haftalar/hafta-1/01_isinma.ipynb` notebook'unu baştan sona çalıştırın ve sondaki alıştırmaları yapın.
+## Görev 1 – Isınma notebook'u (20 dk)
+`haftalar/hafta-1/01_isinma.ipynb` notebook'unu baştan sona çalıştırın. Aynı soruyu yerel modele ve Claude'a
+sorup cevapları, süreleri ve token sayılarını karşılaştıracaksınız.
 
-**Teslim:** Alıştırma 1'deki sıcaklık deneyinin sonucunu ve yorumunuzu notebook'a bir markdown hücresi olarak ekleyin.
+**Teslim:** Notebook'un sonundaki 4 tartışma sorusunun cevaplarını notebook'a bir markdown hücresi olarak ekleyin.
 
 ## Görev 2 – Başlangıç skoru (20 dk)
 ```bash
@@ -82,6 +83,6 @@ Ortak sete göre prompt **ayarlamayın**: bu set, gerçek hayatta göremeyeceği
 ## Hafta sonu kontrol listesi
 - [ ] `python kontrol.py` hatasız
 - [ ] `python eval/calistir.py` hatasız ve skorunuz referans skorunuzdan yüksek
-- [ ] Notebook'taki alıştırmalar tamam
+- [ ] Isınma notebook'undaki tartışma soruları cevaplandı
 
 Hazır çözüm: `git checkout hafta-1` (önce kendi çözümünüzü commit edin!)
