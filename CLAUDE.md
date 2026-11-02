@@ -25,6 +25,7 @@ data/          sentetik veriler (talepler, musteriler, kart_islemleri, gecmis_ta
 mock_api/      FastAPI sahte servisler
 haftalar/      her haftanın klasörü: haftalar/hafta-N/ içinde GOREVLER.md (katılımcı görevleri),
                numaralı notebook'lar (01_isinma.ipynb ...) ve egitmen_notu.md
+               (egitmen_notu.md sadece eğitmenin bilgisayarında durur, .gitignore'da; GitHub'a gitmez)
 src/asistan/   asıl proje kodu
 prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          test_seti.csv, ortak_set.csv, calistir.py
@@ -62,5 +63,5 @@ Her hafta bir öncekinin üzerine kurulur.
 - Kod yazmadan önce kısa bir plan sun ve onay bekle.
 - Her adımdan sonra çalıştırıp test et; hata varsa düzelt, sonra devam et.
 - Bitince: neyi değiştirdiğini, nasıl çalıştırılacağını ve eğitimde vurgulanacak
-  noktaları haftalar/hafta-N/egitmen_notu.md dosyasına, katılımcı görevlerini
+  noktaları haftalar/hafta-N/egitmen_notu.md dosyasına (yerel, commit edilmez), katılımcı görevlerini
   haftalar/hafta-N/GOREVLER.md dosyasına yaz.
