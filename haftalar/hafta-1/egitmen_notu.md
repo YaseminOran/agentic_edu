@@ -15,6 +15,7 @@
 | Değerlendirme | `eval/test_seti.csv` (30), `eval/ortak_set.csv` (10), `eval/calistir.py` | |
 | Kontrol | `kontrol.py` | 8 kontrol, ✅/⚠️/❌ |
 | Notebook | `haftalar/hafta-1/01_isinma.ipynb` | Isınma: aynı soru yerel modele ve Claude'a |
+| Notebook | `haftalar/hafta-1/02_yapilandirilmis_cikti.ipynb` | `talepler.csv`'yi serbest metinle ve şemayla sınıflandırma |
 | Görevler | `haftalar/hafta-1/GOREVLER.md` | Katılımcıya dağıtılan görev listesi |
 
 ### Verinin "açıkça sahte" olması
@@ -117,7 +118,8 @@ Gözlemler (derste kullanın):
 ## 5. Eğitimde vurgulanacak noktalar
 
 1. **LLM bir fonksiyon değil, olasılıksal bir bileşendir.** Serbest metin çıktısı güvenilir şekilde
-   ayrıştırılamaz. Çözüm `with_structured_output()` (`src/asistan/asistan.py`). İki yöntem kullanıyoruz:
+   ayrıştırılamaz. Çözüm `with_structured_output()`. Katılımcılar bunu `02_yapilandirilmis_cikti.ipynb`
+   notebook'unda adım adım görür, asıl kullanım `src/asistan/asistan.py` dosyasındadır. İki yöntem kullanıyoruz:
    - Claude: `method="json_schema"`. API çıktının şemaya uymasını *zorunlu* kılar (`output_config.format`).
    - Ollama: `method="function_calling"`. Şema bir araç olarak verilir, uyum zorunlu değildir.
    Bu fark kendi başına bir ders: yerel modelde nadiren görülen HATA satırları bu zorlamanın olmamasından gelir.
@@ -149,6 +151,20 @@ Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 s
      prosedürlerle (RAG) verilir. Claude bağlam olmadığı için kimlik ve ulaşım kartını da cevaplıyor.
   4. Ad ve kart numarası içeren bir talep buluta maskelenmeden gitmemeli (Hafta 2). Günde 10.000 talepte token
      maliyeti ile yerel modelin kalite/hız sınırı arasındaki dengeyi tartışın.
+- Görev 1'in ikinci notebook'u (`02_yapilandirilmis_cikti.ipynb`) da tek konuya odaklanır: `talepler.csv`'deki ilk
+  5 talep önce serbest metinle, sonra Pydantic şemasıyla (`with_structured_output`) yerel modele sınıflandırılır.
+  Sistem mesajı (`("system", ...)`) ilk kez bu notebook'ta geçer. **Yerel modelin çıktısı `temperature=0` ile bile
+  çalıştırmadan çalıştırmaya biraz değişebilir.** Katılımcının çıktısı notebook'taki örnekle birebir aynı olmayabilir.
+  Tartışma sorularında beklenenler:
+  1. Serbest metinden kategori çıkarmak kırılgandır: `**kredi**` gibi biçimlendirme, açıklama cümleleri ve bazen hiç
+     kategori söylenmemesi (bir denemede T0004'te model talimatı unutup soruyu cevapladı).
+  2. 2026-11-03 denemesinde 5 talepten 3'ü doğru. T0001 (kredi kartı ekstresi) ve T0002 (karttan çift çekim) `kart`
+     olmalı, model `kredi` diyor. Başka bir denemede T0005 de `guvenlik` çıktı. Mesaj: şema biçimi garanti eder,
+     doğruluğu değil. Bu, Görev 2–4'e (ölç, analiz et, sistem mesajını iyileştir) doğal bir geçiş sağlar.
+  3. `gerekce` alanı modelin neye dayandığını gösterir. Yanlış kararda "kredi kartı" ifadesine takıldığı görülebilir.
+     Bu, sistem mesajına hangi kategori sınırının yazılması gerektiğini söyler.
+  4. Şemada sadece `Literal[...]` listesine `"yatirim"` eklemek yeter. Serbest metinde ise ayrıştırma kodunun ve
+     talimat metninin ayrı ayrı güncellenmesi gerekir.
 - Görev 3'te tipik hatalar: `insan_onayi` ↔ `temsilciye_aktar` karışması, kötü niyetli taleplerin `guvenlik`
   yerine konuya göre (`kart`, `hesap`) sınıflanması, kapsam dışı taleplere yanıt verilmesi.
 - Görev 4'te karar sırası katılımcıya verilmez; `PRS-GNL-001`'de bulmaları beklenir (prosedür okuma alışkanlığı,
