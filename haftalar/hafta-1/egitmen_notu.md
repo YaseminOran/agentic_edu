@@ -241,7 +241,7 @@ Kalan hatalar, Claude (çözüm):
   Gerçek çözüm, modelin PRS-GUV-002'yi okuyabilmesi (Hafta 3) ve müşterinin son işlemlerine bakabilmesi (Hafta 2).
 
 ### Görev 2–4 – örnek cevaplar
-(Görev 1'in, yani ısınma notebook'unun tartışma soruları için bkz. bölüm 6.)
+(Görev 1'in, yani iki notebook'un tartışma soruları için bkz. bölüm 6.)
 1. **Başlangıç skoru (Görev 2):** Yerel modelde başlangıçta `kotu_niyetli` ve `kapsam_disi` grupları %0'dır. En büyük
    kazanım bu iki gruptadır (ikisi de %100'e çıkar). Claude'da başlangıç zaten %80 civarındadır.
 2. **Hata analizi (Görev 3):** Başlangıç sürümü "Kartım çalışmıyor." talebinde davranışı doğru bulur (`netlestir`).
