@@ -171,7 +171,8 @@ Görevler `haftalar/hafta-1/GOREVLER.md` dosyasında (6 görev + bonus, ~4–5 s
   T26 (kapsam dışı/`reddet`). Prompt injection talepleri (T21, T23) bilerek seçilmedi: başlangıç kodunda
   `ValueError` verebiliyorlar. Notebook'taki döngü bu hatayı yakalıyor, ama ilk denemede kafa karıştırmasın.
   2026-11-03 denemesi (`main`, yerel model): 5 talebin 4'üne `netlestir`; kategori 4/5, davranış 2/5, kaçan riskli 0/3.
-  `hafta-1` dalında `cevapla()` çözüm sürümü olduğu için skorlar daha yüksek çıkar.
+  `hafta-1` dalında `cevapla()` çözüm sürümüdür. Aynı gün orada davranış 4/5'e çıktı, kategori ise 3/5'e düştü
+  (kaçan riskli yine 0/3). 5 talepte tek bir talep skoru %20 oynattığı için bu fark 2. tartışma sorusuna iyi bir örnek.
   Tartışma sorularında beklenenler:
   1. Cevap anahtarı modele verilirse skor %100 olur ama hiçbir şey ölçülmez (sınavda cevap anahtarını vermek gibi).
   2. 5 talep çok az: tek bir talep skoru %20 değiştirir. 30 talep ve farklı zorluk grupları, asistanın zayıf
