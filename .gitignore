@@ -7,6 +7,9 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
+# Eğitmen notları katılımcılarla paylaşılmaz; sadece eğitmenin bilgisayarında durur
+haftalar/*/egitmen_notu.md
+
 # Üretilen çıktılar
 eval/sonuclar/
 data/indeks/

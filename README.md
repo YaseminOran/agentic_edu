@@ -42,7 +42,7 @@ Her haftanın görevleri: `haftalar/hafta-N/GOREVLER.md` (Hafta 1: [haftalar/haf
 ```
 data/          sentetik veriler ve prosedürler (yeniden üretmek için: python data/uret.py)
 mock_api/      FastAPI sahte banka servisleri
-haftalar/      haftalık klasörler: GOREVLER.md, notebook'lar, eğitmen notu
+haftalar/      haftalık klasörler: GOREVLER.md ve notebook'lar
 src/asistan/   asistanın kodu – ortak arayüz: cevapla(talep, musteri_no) -> dict
 prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          değerlendirme setleri ve çalıştırıcı
