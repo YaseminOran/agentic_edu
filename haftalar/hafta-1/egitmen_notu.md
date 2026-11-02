@@ -207,17 +207,15 @@ Kalan hatalar, Claude (çözüm):
   başlangıçtan iyi değil (%90 → %90). Derste şöyle tartışın: test setine göre yapılan iyileştirme genelleşmeyebilir.
   Gerçek çözüm, modelin PRS-GUV-002'yi okuyabilmesi (Hafta 3) ve müşterinin son işlemlerine bakabilmesi (Hafta 2).
 
-### Notebook alıştırmaları – örnek cevaplar
-1. **Sıcaklık:** `temperature=0.8` ile aynı talep farklı çalıştırmalarda farklı davranış etiketi alabilir. Bankacılıkta
-   aynı talebe aynı işlemin uygulanması (tutarlılık, denetlenebilirlik) gerektiği için sınıflandırmada düşük sıcaklık
-   tercih edilir. Yaratıcılık gerekmez.
-2. **Zor talepler:** Başlangıç sürümü "Kartım çalışmıyor." talebinde davranışı doğru bulur (`netlestir`). Ama aslında
-   hemen her talebe `netlestir` dediği için bu bir şans eseri. Prompt injection talebinde (T21) ise model aracı hiç
-   çağırmaz ve düz metinle cevap verir. Sonuç HATA olur: saldırı, yapılandırılmış çıktı sözleşmesini bozar.
+### Görev 2–4 – örnek cevaplar
+(Görev 1'in, yani ısınma notebook'unun tartışma soruları için bkz. bölüm 6.)
+1. **Başlangıç skoru (Görev 2):** Yerel modelde başlangıçta `kotu_niyetli` ve `kapsam_disi` grupları %0'dır. En büyük
+   kazanım bu iki gruptadır (ikisi de %100'e çıkar). Claude'da başlangıç zaten %80 civarındadır.
+2. **Hata analizi (Görev 3):** Başlangıç sürümü "Kartım çalışmıyor." talebinde davranışı doğru bulur (`netlestir`).
+   Ama aslında hemen her talebe `netlestir` dediği için bu bir şans eseri. Prompt injection talebinde (T21) ise model
+   aracı hiç çağırmaz ve düz metinle cevap verir. Sonuç HATA olur: saldırı, yapılandırılmış çıktı sözleşmesini bozar.
    Çözümde bu talep `reddet` olur. Model aracı yine çağırmazsa güvenli varsayılan devreye girer.
-3. **Değerlendirme:** Yerel modelde başlangıçta `kotu_niyetli` ve `kapsam_disi` grupları %0'dır. En büyük kazanım bu
-   iki gruptadır (ikisi de %100'e çıkar). Claude'da başlangıç zaten %80 civarındadır.
-4. **İyileştirme:** Bu dalın `SISTEM_MESAJI`'na bakın.
+3. **İyileştirme (Görev 4):** Bu dalın `SISTEM_MESAJI`'na bakın.
 
 ### Derste tartışılacaklar
 - **Model mi, prompt mu?** Claude basit prompt'la %77'ye ulaşıyor; yerel model ancak iyi prompt'la aynı seviyeye geliyor.
