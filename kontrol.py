@@ -1,4 +1,5 @@
-"""Ortam kontrolü (Hafta 1): Python, paketler, .env, veri, mock API, Ollama ve Claude erişimi.
+"""Ortam kontrolü (Hafta 1'de eklendi, Hafta 2'de genişletildi): Python, paketler, .env, veri,
+maskeleme testleri, mock API uç noktaları, Ollama, asistan akışı ve Claude erişimi.
 Her haftanın başında ve sonunda çalıştırın: python kontrol.py
 Her madde ✅ (tamam), ⚠️ (uyarı, devam edilebilir) veya ❌ (düzeltilmeli) olarak raporlanır.
 """
@@ -64,15 +65,37 @@ def env_dosyasi():
 
 
 def veri_dosyalari():
-    dosyalar = ["data/musteriler.csv", "data/kart_islemleri.csv", "data/gecmis_talepler.csv",
-                "data/talepler.csv", "eval/test_seti.csv", "eval/ortak_set.csv"]
+    import csv
+
+    from asistan.kategoriler import KATEGORILER
+
+    dosyalar = ["data/musteriler.json", "data/kart_islemleri.json", "data/hesap_durumu.json",
+                "data/kredi_basvurulari.json", "data/gecmis_talepler.json", "data/talepler.csv",
+                "eval/test_seti.csv", "eval/ortak_set.csv"]
     eksik = [d for d in dosyalar if not (PROJE_KOKU / d).exists()]
     if eksik:
-        raise RuntimeError(f"eksik: {', '.join(eksik)} (CSV'ler için: python data/uret.py)")
-    prosedur_sayisi = len(list((PROJE_KOKU / "data" / "prosedurler").glob("*.md")))
-    if prosedur_sayisi == 0:
-        raise RuntimeError("data/prosedurler/ boş")
+        raise RuntimeError(f"eksik: {', '.join(eksik)} (veri için: python data/uret.py)")
+    # Her ajan kategorisinin prosedür klasörü dolu olmalı (Hafta 3'te RAG bunları okuyacak)
+    for ad, kategori in KATEGORILER.items():
+        if not list(kategori["prosedur_klasoru"].glob("*.md")):
+            raise RuntimeError(f"{ad} kategorisinin prosedür klasörü boş: {kategori['prosedur_klasoru']}")
+    with open(PROJE_KOKU / "eval" / "test_seti.csv", encoding="utf-8") as f:
+        kolonlar = next(csv.reader(f))
+    beklenen = ["id", "talep", "musteri_no", "beklenen_kategori", "ikinci_konu", "beklenen_davranis",
+                "beklenen_araclar", "beklenen_kaynak", "zorluk", "not"]
+    if kolonlar != beklenen:
+        raise RuntimeError(f"test_seti.csv kolonları CLAUDE.md'deki formata uymuyor: {kolonlar}")
+    prosedur_sayisi = len(list((PROJE_KOKU / "data" / "prosedurler").rglob("*.md")))
     return f"{len(dosyalar)} dosya + {prosedur_sayisi} prosedür"
+
+
+def maskeleme_testleri():
+    sys.path.insert(0, str(PROJE_KOKU / "tests"))
+    import test_maskeleme
+
+    test_maskeleme.test_maskeleme()
+    test_maskeleme.test_iki_kez_maskelemek_bozmaz()
+    return f"{len(test_maskeleme.ORNEKLER)} örnek geçti"
 
 
 def mock_api():
@@ -86,7 +109,19 @@ def mock_api():
         raise RuntimeError(f"{url} erişilemiyor -> uvicorn mock_api.main:app --port 8000")
     if cevap.status_code != 200 or cevap.json().get("durum") != "ok":
         raise RuntimeError(f"{url} yanıt verdi ama bizim mock API değil (port başka bir serviste olabilir)")
-    return f"{url} ({cevap.json()['musteri_sayisi']} müşteri)"
+    # Hafta 2 uç noktaları: eski bir mock API süreci açık kalmışsa burada yakalanır
+    from asistan.araclar import OKUMA_ARACLARI, musteri_oturumu
+
+    yazilmamis = []
+    with musteri_oturumu("M0001"):
+        for arac in OKUMA_ARACLARI:
+            try:
+                arac.invoke({"sorgu": "deneme"} if arac.name == "prosedur_ara" else {})
+            except NotImplementedError:  # lab görevi henüz yapılmamış (ör. TODO (Lab 3): hesap_durumu)
+                yazilmamis.append(arac.name)
+    if yazilmamis:
+        raise Uyari(f"API ayakta, ama şu araçlar henüz yazılmamış: {', '.join(yazilmamis)} (lab görevi)")
+    return f"{url} ({cevap.json()['musteri_sayisi']} müşteri, {len(OKUMA_ARACLARI)} okuma aracı, hata oranı {cevap.json().get('hata_orani')})"
 
 
 def ollama_modelleri():
@@ -108,9 +143,10 @@ def ollama_modelleri():
 def yerel_model_cagrisi():
     from asistan import cevapla
 
-    # Düz sohbet değil, asistanın kullandığı yapılandırılmış çıktı yolu test edilir
-    sonuc = cevapla("Kartımı kaybettim.", musteri_no="M1001", model_turu="yerel")
-    return f"cevapla() -> {sonuc['kategori']} / {sonuc['davranis']}"
+    # Düz sohbet değil, asistanın tüm akışı (sınıflandırma + ajan + araç + taslak) test edilir
+    sonuc = cevapla("Kartımın son kullanma tarihi ne zaman?", musteri_no="M0004", model_turu="yerel")
+    return (f"cevapla() -> {sonuc['kategori']} / {sonuc['davranis']}, "
+            f"araçlar: {', '.join(sonuc['kullanilan_araclar']) or '-'}")
 
 
 def claude_cagrisi():
@@ -128,9 +164,10 @@ if __name__ == "__main__":
     kontrol("Paketler", paketler)
     kontrol(".env", env_dosyasi)
     kontrol("Veri dosyaları", veri_dosyalari)
+    kontrol("Maskeleme testleri", maskeleme_testleri)
     kontrol("Mock API", mock_api)
     kontrol("Ollama modelleri", ollama_modelleri)
-    kontrol("Yerel model çağrısı", yerel_model_cagrisi)
+    kontrol("Yerel model + ajan akışı", yerel_model_cagrisi)
     kontrol("Claude çağrısı", claude_cagrisi)
 
     hatalar = [ad for durum, ad in sonuclar if durum == "❌"]

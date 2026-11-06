@@ -1,0 +1,898 @@
+[
+  {
+    "musteri_no": "M0001",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 01",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 51156.04,
+        "kullanilabilir_bakiye": 51156.04,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-08",
+        "aciklama": "GELEN FAST",
+        "tutar": 14336.49
+      },
+      {
+        "tarih": "2026-09-08",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -992.78
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0002",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 02",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 47724.93,
+        "kullanilabilir_bakiye": 47724.93,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-14",
+        "aciklama": "GELEN FAST",
+        "tutar": 4872.71
+      },
+      {
+        "tarih": "2026-09-24",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1208.89
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0003",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 03",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 14585.8,
+        "kullanilabilir_bakiye": 14585.8,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-13",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -901.19
+      },
+      {
+        "tarih": "2026-09-15",
+        "aciklama": "GELEN FAST",
+        "tutar": 1012.54
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0004",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 04",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 28310.65,
+        "kullanilabilir_bakiye": 28310.65,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-02",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -220.7
+      },
+      {
+        "tarih": "2026-09-13",
+        "aciklama": "GELEN FAST",
+        "tutar": 3030.54
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0005",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 05",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 18902.8,
+        "kullanilabilir_bakiye": 18902.8,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-08",
+        "aciklama": "GELEN FAST",
+        "tutar": 14517.96
+      },
+      {
+        "tarih": "2026-09-14",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -675.11
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0006",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 06",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 24861.29,
+        "kullanilabilir_bakiye": 24861.29,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-12",
+        "aciklama": "GELEN FAST",
+        "tutar": 1938.14
+      },
+      {
+        "tarih": "2026-09-20",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -999.27
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0007",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 07",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 27273.48,
+        "kullanilabilir_bakiye": 27273.48,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-09",
+        "aciklama": "GELEN FAST",
+        "tutar": 10588.52
+      },
+      {
+        "tarih": "2026-09-26",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1329.14
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0008",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 08",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 46925.64,
+        "kullanilabilir_bakiye": 46925.64,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-06",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1452.77
+      },
+      {
+        "tarih": "2026-09-10",
+        "aciklama": "GELEN FAST",
+        "tutar": 11961.83
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0009",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 09",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 26240.79,
+        "kullanilabilir_bakiye": 26240.79,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-01",
+        "aciklama": "GELEN FAST",
+        "tutar": 17430.13
+      },
+      {
+        "tarih": "2026-09-04",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -273.83
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0010",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 10",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 9604.42,
+        "kullanilabilir_bakiye": 9604.42,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-01",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1093.06
+      },
+      {
+        "tarih": "2026-09-25",
+        "aciklama": "GELEN FAST",
+        "tutar": 3658.36
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0011",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 11",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 21088.37,
+        "kullanilabilir_bakiye": 21088.37,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-03",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -210.4
+      },
+      {
+        "tarih": "2026-09-14",
+        "aciklama": "GELEN FAST",
+        "tutar": 17951.06
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0012",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 12",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 12179.96,
+        "kullanilabilir_bakiye": 3759.96,
+        "durum": "kismi_bloke",
+        "blokeler": [
+          {
+            "tutar": 8420.0,
+            "tarih": "2026-09-26",
+            "neden": "Gecikmiş ihtiyaç kredisi taksitleri (2 taksit, 47 gün gecikme). Gecikme 90 güne ulaşırsa yasal takip başlatılır."
+          }
+        ]
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-10",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -523.95
+      },
+      {
+        "tarih": "2026-09-13",
+        "aciklama": "GELEN FAST",
+        "tutar": 5851.8
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0013",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 13",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 32241.94,
+        "kullanilabilir_bakiye": 32241.94,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-12",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1418.25
+      },
+      {
+        "tarih": "2026-09-14",
+        "aciklama": "GELEN FAST",
+        "tutar": 12999.25
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0014",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 14",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 9674.56,
+        "kullanilabilir_bakiye": 9674.56,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-02",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -947.19
+      },
+      {
+        "tarih": "2026-09-09",
+        "aciklama": "GELEN FAST",
+        "tutar": 12677.34
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0015",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 15",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 50630.54,
+        "kullanilabilir_bakiye": 50630.54,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-03",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -139.72
+      },
+      {
+        "tarih": "2026-09-12",
+        "aciklama": "GELEN FAST",
+        "tutar": 1303.29
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0016",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 16",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 3204.98,
+        "kullanilabilir_bakiye": 3204.98,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-10",
+        "aciklama": "GELEN FAST",
+        "tutar": 15534.94
+      },
+      {
+        "tarih": "2026-09-22",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1011.58
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0017",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 17",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 46134.06,
+        "kullanilabilir_bakiye": 46134.06,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-17",
+        "aciklama": "GELEN FAST",
+        "tutar": 12553.11
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -797.25
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0018",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 18",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 37816.26,
+        "kullanilabilir_bakiye": 37816.26,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-21",
+        "aciklama": "GELEN FAST",
+        "tutar": 13017.19
+      },
+      {
+        "tarih": "2026-09-21",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -776.12
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0019",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 19",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 48378.95,
+        "kullanilabilir_bakiye": 48378.95,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-09",
+        "aciklama": "GELEN FAST",
+        "tutar": 8418.8
+      },
+      {
+        "tarih": "2026-09-16",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -202.16
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0020",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 20",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 4064.83,
+        "kullanilabilir_bakiye": 4064.83,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-16",
+        "aciklama": "GELEN FAST",
+        "tutar": 8604.62
+      },
+      {
+        "tarih": "2026-09-16",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -385.63
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0021",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 21",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 36596.29,
+        "kullanilabilir_bakiye": 36596.29,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-20",
+        "aciklama": "GELEN FAST",
+        "tutar": 17298.96
+      },
+      {
+        "tarih": "2026-09-20",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1127.88
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0022",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 22",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 51716.25,
+        "kullanilabilir_bakiye": 51716.25,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-18",
+        "aciklama": "GELEN FAST",
+        "tutar": 3049.94
+      },
+      {
+        "tarih": "2026-09-19",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -820.97
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0023",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 23",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 6817.94,
+        "kullanilabilir_bakiye": 6817.94,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-22",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -729.43
+      },
+      {
+        "tarih": "2026-09-23",
+        "aciklama": "GELEN FAST",
+        "tutar": 9596.22
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0024",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 24",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 8882.22,
+        "kullanilabilir_bakiye": 8882.22,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-18",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1309.83
+      },
+      {
+        "tarih": "2026-09-29",
+        "aciklama": "GELEN FAST",
+        "tutar": 6159.13
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0025",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 25",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 25379.02,
+        "kullanilabilir_bakiye": 25379.02,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-03",
+        "aciklama": "GELEN FAST",
+        "tutar": 18095.06
+      },
+      {
+        "tarih": "2026-09-04",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -558.41
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0026",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 26",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 34872.38,
+        "kullanilabilir_bakiye": 34872.38,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-20",
+        "aciklama": "GELEN FAST",
+        "tutar": 4201.76
+      },
+      {
+        "tarih": "2026-09-25",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -797.57
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0027",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 27",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 31126.13,
+        "kullanilabilir_bakiye": 31126.13,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-15",
+        "aciklama": "GELEN FAST",
+        "tutar": 17641.98
+      },
+      {
+        "tarih": "2026-09-15",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -132.45
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0028",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 28",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 56741.35,
+        "kullanilabilir_bakiye": 56741.35,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-14",
+        "aciklama": "GELEN FAST",
+        "tutar": 9416.0
+      },
+      {
+        "tarih": "2026-09-23",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -401.2
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0029",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 29",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 21497.26,
+        "kullanilabilir_bakiye": 21497.26,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-11",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1335.28
+      },
+      {
+        "tarih": "2026-09-29",
+        "aciklama": "GELEN FAST",
+        "tutar": 5986.45
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  },
+  {
+    "musteri_no": "M0030",
+    "hesaplar": [
+      {
+        "iban": "TR00 9999 9000 0000 0000 0000 30",
+        "tur": "vadesiz",
+        "para_birimi": "TRY",
+        "bakiye": 39428.47,
+        "kullanilabilir_bakiye": 39428.47,
+        "durum": "aktif",
+        "blokeler": []
+      }
+    ],
+    "son_hareketler": [
+      {
+        "tarih": "2026-09-15",
+        "aciklama": "GELEN FAST",
+        "tutar": 6072.09
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "FATURA ODEMESI",
+        "tutar": -1286.04
+      },
+      {
+        "tarih": "2026-09-30",
+        "aciklama": "HESAP ISLETIM UCRETI",
+        "tutar": -45.0
+      }
+    ]
+  }
+]

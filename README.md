@@ -9,9 +9,9 @@ cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bi
 | Hafta | Konu | Dal |
 |---|---|---|
 | 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme | `main` (başlangıç), `hafta-1` (çözüm) |
-| 2 | Araçlar (tool calling), ReAct ajanı, hassas veri maskeleme | `hafta-2` |
-| 3 | Prosedürlerden RAG (FAISS), LangGraph ile akış | `hafta-3` |
-| 4 | Prompt şablonları, insan onayı (human-in-the-loop), MCP | `hafta-4` |
+| 2 | Araçlar (tool calling), LangGraph ajan akışı, maskeleme, insan onayı, MCP | `hafta-2` |
+| 3 | Prosedürlerden RAG (FAISS), kaynak gösterme | `hafta-3` |
+| 4 | Prompt şablonları, self-check, onaylı yazma işlemleri | `hafta-4` |
 | 5 | Kapsamlı değerlendirme ve Streamlit demo | `hafta-5` |
 
 ## Kurulum
@@ -36,6 +36,7 @@ Mock API container açılınca otomatik başlar (http://localhost:8000/docs). Ba
 `uvicorn mock_api.main:app --host 0.0.0.0 --port 8000`
 
 Her haftanın görevleri: `haftalar/hafta-N/GOREVLER.md` (Hafta 1: [haftalar/hafta-1/GOREVLER.md](haftalar/hafta-1/GOREVLER.md))
+Hafta 2 çalıştırma adımları ve sık hatalar: [docs/hafta-2.md](docs/hafta-2.md); bir talebin kod içindeki yolculuğu: [docs/kod_haritasi.md](docs/kod_haritasi.md)
 
 ## Klasörler
 
@@ -44,6 +45,8 @@ data/          sentetik veriler ve prosedürler (yeniden üretmek için: python 
 mock_api/      FastAPI sahte banka servisleri
 haftalar/      haftalık klasörler: GOREVLER.md ve notebook'lar
 src/asistan/   asistanın kodu – ortak arayüz: cevapla(talep, musteri_no) -> dict
+tests/         birim testleri (python tests/test_maskeleme.py)
+docs/          haftalık çalıştırma notları ve kod haritası
 prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          değerlendirme setleri ve çalıştırıcı
 ```
