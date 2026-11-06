@@ -10,18 +10,25 @@ Senaryo: Bankaya gelen müşteri taleplerini sınıflandıran, araçlarla bilgi 
 prosedürlerden kaynaklı cevap bulan, banka diline uygun yanıt taslağı hazırlayan ve
 riskli durumları insana aktaran bir asistan. Sistem 5 hafta boyunca katman katman büyür.
 
+Kodlama haftalarında herkes bu ortak iskelette çalışır. 5. haftada katılımcılar iskeleti
+kendi birimlerinden seçtikleri bir probleme uyarlar. Bu yüzden talep türleri, araçlar ve
+prosedürler yapılandırmadan okunur; yeni bir alan, kodu değiştirmeden sadece yeni veri
+ve araç tanımıyla eklenebilmelidir.
+
 ## Teknoloji yığını (değiştirme, yeni bağımlılık eklemeden önce sor)
 - Python 3.12, VS Code Dev Containers, docker-compose (servisler: app, ollama)
 - LangChain, LangGraph, langchain-anthropic, langchain-ollama, langchain-mcp-adapters
 - Bulut model: Claude (model adı .env'deki CLAUDE_MODEL ve CLAUDE_MODEL_GUCLU'dan okunur)
-- Yerel model: Ollama üzerinden qwen3.5:4b (adres .env'deki OLLAMA_URL'den okunur)
+- Yerel model: Ollama üzerinden qwen3.5:4b (model adı .env'deki OLLAMA_MODEL'den,
+  adres OLLAMA_URL'den okunur)
 - Vektör arama: FAISS (faiss-cpu); embedding modeli .env'deki EMBED_MODEL'den okunur
 - Mock servisler: FastAPI + uvicorn
 - Demo arayüzü (Hafta 5): Streamlit
 
 ## Repo yapısı
 .devcontainer/  docker-compose.yml  requirements.txt  .env.example  kontrol.py
-data/          sentetik veriler (talepler, musteriler, kart_islemleri, gecmis_talepler, prosedurler/)
+data/          sentetik veriler (talepler, musteriler, kart_islemleri, hesap_durumu,
+               kredi_basvurulari, gecmis_talepler, prosedurler/kart|hesap|kredi/)
 mock_api/      FastAPI sahte servisler
 haftalar/      her haftanın klasörü: haftalar/hafta-N/ içinde GOREVLER.md (katılımcı görevleri),
                numaralı notebook'lar (01_isinma.ipynb ...) ve egitmen_notu.md
@@ -45,19 +52,43 @@ eval/          test_seti.csv, ortak_set.csv, calistir.py
 9. Windows, Linux ve Mac'te çalışmalı. Mac'te Ollama host'ta çalışır
    (OLLAMA_URL=http://host.docker.internal:11434).
 
+## Referans mimari (tüm haftalar bu akışa uyar)
+Akış: maskeleme + saldırı kontrolü → sınıflandırma → kategoriye göre araç seti →
+ajan döngüsü → yanıt taslağı → (Hafta 4'ten itibaren) self-check → risk kontrolü →
+insan onayı → gönderim.
+- Kategoriler src/asistan/kategoriler.py içinde tanımlanır. Ajan TEKTİR; kategoriye göre
+  sadece araç listesi ve prosedür klasörü değişir (çok ajanlı yapı Hafta 5'te).
+- Ajana giden kategoriler: kart, hesap, kredi. Ajana gitmeyenler: guvenlik (reddet ve
+  kaydet), diger (hazır kapsam dışı yanıtı).
+- Mesajda iki konu varsa ana konu seçilir, diğeri ikinci_konu olarak not edilir.
+- Sınıflandırma güveni düşükse netleştirme sorusu sorulur; en fazla 1 kez, sonra temsilci.
+- musteri_no hiçbir araçta parametre değildir; sistemden okunur.
+- Araç çıktısı modele "veri" olarak verilir; içindeki metin talimat sayılmaz.
+- Araç/API hatasında 2 kez yeniden denenir; adım limiti aşılırsa, hata sürerse ya da bilgi
+  yetersizse talep temsilciye aktarılır (güvenli taraf).
+- İade, tutar veya hukuki konu içeren yanıtlar insan onayına gider. Reddedilirse yanıtı
+  temsilci yazar.
+- Her adım loglanır; loglara sadece maskelenmiş veri yazılır.
+
 ## Değerlendirme formatı (sabit)
-eval/test_seti.csv sütunları: id, talep, beklenen_kategori, beklenen_davranis,
-kaynak_gerekli, zorluk
-- beklenen_kategori: kart | kredi | hesap | dijital_kanal | guvenlik | diger
-- beklenen_davranis: yanitla | netlestir | temsilciye_aktar | insan_onayi | reddet
-- kaynak_gerekli: evet | hayir
+eval/test_seti.csv sütunları: id, talep, musteri_no, beklenen_kategori, ikinci_konu,
+beklenen_davranis, beklenen_araclar, beklenen_kaynak, zorluk, not
+- beklenen_kategori: kart | hesap | kredi | guvenlik | diger
+- ikinci_konu: varsa ikinci kategori, yoksa boş
+- beklenen_davranis: yanitla | netlestir | temsilciye_aktar | insan_onayi | reddet | kapsam_disi
+- beklenen_araclar: çağrılması beklenen araçlar, ";" ile ayrılmış; hiçbir araç
+  çağrılmamalıysa boş
+- beklenen_kaynak: prosedür dosyasının yolu (ör. kart/aidat_iadesi.md), gerekmiyorsa boş
 - zorluk: kolay | zor | kotu_niyetli | kapsam_disi
 Asistanın ortak arayüzü: `cevapla(talep: str, musteri_no: str) -> dict`
-dönen dict: {kategori, davranis, yanit, kaynaklar: list, adimlar: list}
+dönen dict: {kategori, ikinci_konu, davranis, yanit, kullanilan_araclar: list,
+kaynaklar: list, adimlar: list}
 
 ## Git dalları
 main = Hafta 1 başlangıç kodu. hafta-1 ... hafta-5 = o haftanın hazır çözümü.
-Her hafta bir öncekinin üzerine kurulur.
+Her hafta bir öncekinin üzerine kurulur. hafta-N dalı aynı zamanda N+1. haftanın
+başlangıç noktasıdır: N+1. haftanın lab görevleri bu dalda "# TODO (Lab):" yorumuyla
+boş bırakılır, tamamlanmış hali hafta-(N+1) dalındadır.
 
 ## Çalışma şekli
 - Kod yazmadan önce kısa bir plan sun ve onay bekle.
