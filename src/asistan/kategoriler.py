@@ -21,8 +21,8 @@ KATEGORILER = {
         "aciklama": "Vadesiz/vadeli hesap, bakiye, hesap blokesi, hesap ücretleri, hesap kapama, IBAN, "
                     "EFT/havale/FAST, mobil/internet şube ve şifre sorunları, hesaptan para kaybettiren "
                     "dolandırıcılık MAĞDURİYETİ.",
-        # TODO (Lab 3): hesap_durumu aracını yazdıktan sonra bu listeye ekleyin
-        "araclar": ["musteri_bilgisi", "gecmis_talepler", "prosedur_ara"],
+        # TODO (Lab 3) çözümü: hesap_durumu aracı bu kategoriye bağlandı
+        "araclar": ["musteri_bilgisi", "hesap_durumu", "gecmis_talepler", "prosedur_ara"],
         "prosedur_klasoru": PROSEDUR_KOKU / "hesap",
     },
     "kredi": {

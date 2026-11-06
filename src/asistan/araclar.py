@@ -124,13 +124,15 @@ def kart_islemleri(son_gun: int = 30) -> str:
 
 @tool
 def hesap_durumu() -> str:
-    """TODO (Lab 3): Bu aracın açıklamasını yazın. Model aracı SADECE bu metne bakarak seçer.
-    Diğer araçlardaki gibi üç kısım olsun: ne yapar / ne zaman kullan / ne zaman KULLANMA.
-    Uç noktanın ne döndürdüğüne http://localhost:8000/docs adresinden bakın (GET /hesap_durumu)."""
-    # TODO (Lab 3): GET /hesap_durumu/{musteri_no} ucunu çağırın ve sonucu veri olarak etiketleyip döndürün.
-    # İpucu: diğer okuma araçlarına bakın: aktif_musteri(), api_cagir(), veri_olarak_etiketle().
-    # musteri_no bu aracın parametresi OLMAYACAK.
-    raise NotImplementedError("TODO (Lab 3): hesap_durumu aracı henüz yazılmadı")
+    """Müşterinin vadesiz hesabının durumunu getirir: bakiye, kullanılabilir bakiye, hesap durumu
+    (aktif/kismi_bloke), varsa blokelerin tutarı/tarihi/NEDENİ ve son hesap hareketleri (gelen transfer,
+    fatura ödemesi, hesap işletim ücreti gibi kesintiler).
+
+    Ne zaman kullan: bakiye, hesap blokesi ve nedeni, hesaptan kesilen ücretler, hesap hareketleri
+    soruluyorsa. Ne zaman KULLANMA: kart harcamaları için (kart_islemleri), kart blokesi için
+    (musteri_bilgisi), kredi taksitleri için (kredi_basvuru_durumu)."""
+    # TODO (Lab 3) çözümü: aracın gövdesi
+    return veri_olarak_etiketle("hesap_durumu", api_cagir("GET", f"/hesap_durumu/{aktif_musteri()}"))
 
 
 @tool

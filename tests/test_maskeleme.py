@@ -24,7 +24,9 @@ ORNEKLER = [
     ("hepsi bir arada",
      "Ben Ayşe, TCKN 99999000001, kart 9999 0000 0000 0001, IBAN TR00 9999 9000 0000 0000 0000 01, tel 0500 000 0001",
      "Ben Ayşe, TCKN [TCKN], kart [KART ****0001], IBAN [IBAN ****0001], tel [TELEFON ****0001]"),
-    # TODO (Lab 2): e-posta için en az 2 test ekleyin (önce testi yazın, başarısız olduğunu görün)
+    # TODO (Lab 2) çözümü: e-posta testleri
+    ("e-posta", "Bana ayse.ornek1@ornek.test adresinden yazın", "Bana [EPOSTA a***@ornek.test] adresinden yazın"),
+    ("e-posta, JSON içinde", '"eposta": "deniz.kurmaca4@ornek.test"', '"eposta": "[EPOSTA d***@ornek.test]"'),
     # Maskelenmemesi gerekenler (yanlış pozitif kontrolü)
     ("tutar", "Kartımdan 4.250 TL ve 750,00 TL çekildi", "Kartımdan 4.250 TL ve 750,00 TL çekildi"),
     ("müşteri no", "M0007 müşterisi", "M0007 müşterisi"),
@@ -45,7 +47,7 @@ def test_maskeleme():
 
 def test_iki_kez_maskelemek_bozmaz():
     """Maskelenmiş metin tekrar maskelenince değişmemeli (log + model yolunda iki kez geçebilir)."""
-    metin = maskele("TCKN 99999000001, kart 9999 0000 0000 0001")
+    metin = maskele("TCKN 99999000001, kart 9999 0000 0000 0001, e-posta can.deneme2@ornek.test")
     assert maskele(metin) == metin
 
 
