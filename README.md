@@ -9,7 +9,7 @@ cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bi
 | Hafta | Konu | Dal |
 |---|---|---|
 | 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme | `main` (başlangıç), `hafta-1` (çözüm) |
-| 2 | Araçlar (tool calling), LangGraph ajan akışı, maskeleme, insan onayı, MCP | `hafta-1` (başlangıç), `hafta-2` (çözüm) |
+| 2 | Tek ajan ve tool calling: ajan döngüsü, API entegrasyonu, worker agent, insan onayı, hata yönetimi | `hafta-1` (başlangıç), `hafta-2` (çözüm) |
 | 3 | Prosedürlerden RAG (FAISS), kaynak gösterme | `hafta-3` |
 | 4 | Prompt şablonları, self-check, onaylı yazma işlemleri | `hafta-4` |
 | 5 | Kapsamlı değerlendirme ve Streamlit demo | `hafta-5` |
@@ -38,8 +38,7 @@ Mock API container açılınca otomatik başlar (http://localhost:8000/docs). Ba
 Her haftanın görevleri `haftalar/hafta-N/GOREVLER.md` dosyasındadır:
 
 - Hafta 1: [haftalar/hafta-1/GOREVLER.md](haftalar/hafta-1/GOREVLER.md)
-- Hafta 2: [haftalar/hafta-2/GOREVLER.md](haftalar/hafta-2/GOREVLER.md). Çalıştırma adımları ve sık hatalar:
-  [docs/hafta-2.md](docs/hafta-2.md); bir talebin kod içindeki yolculuğu: [docs/kod_haritasi.md](docs/kod_haritasi.md)
+- Hafta 2: [haftalar/hafta-2/GOREVLER.md](haftalar/hafta-2/GOREVLER.md) (sık hatalar dahil)
 
 Her hafta bir önceki haftanın çözüm dalından başlar (Hafta 2 için `hafta-1`). O haftanın lab görevleri kodda
 `# TODO (Lab N):` yorumuyla işaretlidir.
@@ -51,8 +50,5 @@ data/          sentetik veriler ve prosedürler (yeniden üretmek için: python 
 mock_api/      FastAPI sahte banka servisleri
 haftalar/      haftalık klasörler: GOREVLER.md ve notebook'lar
 src/asistan/   asistanın kodu – ortak arayüz: cevapla(talep, musteri_no) -> dict
-tests/         birim testleri (python tests/test_maskeleme.py)
-docs/          haftalık çalıştırma notları ve kod haritası
-prompts/       prompt şablonları (Hafta 4'ten itibaren)
 eval/          değerlendirme setleri ve çalıştırıcı
 ```

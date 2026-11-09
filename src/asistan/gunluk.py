@@ -34,7 +34,7 @@ def _kur() -> logging.Logger:
     dosya.setFormatter(logging.Formatter("%(asctime)s %(levelname)-7s %(message)s"))
     logger.addHandler(dosya)
 
-    konsol = logging.StreamHandler()  # stderr; MCP sunucusunda stdout protokole ayrılmıştır
+    konsol = logging.StreamHandler()  # stderr
     konsol.setLevel(logging.WARNING)
     konsol.setFormatter(logging.Formatter("  [log] %(levelname)s %(message)s"))
     logger.addHandler(konsol)
