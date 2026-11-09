@@ -1,5 +1,5 @@
 """Ortam kontrolü (Hafta 1'de eklendi, Hafta 2'de genişletildi): Python, paketler, .env, veri,
-maskeleme testleri, mock API uç noktaları, Ollama, asistan akışı ve Claude erişimi.
+mock API uç noktaları, Ollama, asistan akışı ve Claude erişimi.
 Her haftanın başında ve sonunda çalıştırın: python kontrol.py
 Her madde ✅ (tamam), ⚠️ (uyarı, devam edilebilir) veya ❌ (düzeltilmeli) olarak raporlanır.
 """
@@ -89,15 +89,6 @@ def veri_dosyalari():
     return f"{len(dosyalar)} dosya + {prosedur_sayisi} prosedür"
 
 
-def maskeleme_testleri():
-    sys.path.insert(0, str(PROJE_KOKU / "tests"))
-    import test_maskeleme
-
-    test_maskeleme.test_maskeleme()
-    test_maskeleme.test_iki_kez_maskelemek_bozmaz()
-    return f"{len(test_maskeleme.ORNEKLER)} örnek geçti"
-
-
 def mock_api():
     import httpx
     from asistan.ayarlar import ayar
@@ -164,7 +155,6 @@ if __name__ == "__main__":
     kontrol("Paketler", paketler)
     kontrol(".env", env_dosyasi)
     kontrol("Veri dosyaları", veri_dosyalari)
-    kontrol("Maskeleme testleri", maskeleme_testleri)
     kontrol("Mock API", mock_api)
     kontrol("Ollama modelleri", ollama_modelleri)
     kontrol("Yerel model + ajan akışı", yerel_model_cagrisi)

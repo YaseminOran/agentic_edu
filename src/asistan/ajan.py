@@ -3,7 +3,7 @@ ajan döngüsü -> yanıt taslağı -> risk kontrolü -> insan onayı -> sonuç.
 Prosedür araması (RAG) Hafta 3'te, self-check Hafta 4'te bu akışa eklenecek.
 
 Komut satırından deneme (insan onayını terminalden sorar):
-  python -m asistan.ajan "Kartımdan aidat iki kez kesildi" M0007 [--model bulut] [--mcp] [--guvensiz]
+  python -m asistan.ajan "Kartımdan aidat iki kez kesildi" M0007 [--model bulut] [--guvensiz]
 """
 
 import re
@@ -280,7 +280,7 @@ notunu okuyup bir karar ver ve müşteriye gidecek yanıt taslağını yaz.
 def taslak_dugumu(durum: Durum, config: RunnableConfig) -> Command[Literal["risk_kontrolu"]]:
     """Ajanın topladığı verilerden yapılandırılmış bir yanıt taslağı üretir.
     Mesaj geçmişini olduğu gibi göndermek yerine düz metne çeviriyoruz: model bağımsız ve okunur."""
-    veriler = [m.text for m in durum["mesajlar"] if isinstance(m, ToolMessage)]  # .text: MCP içeriği liste olabilir
+    veriler = [m.text for m in durum["mesajlar"] if isinstance(m, ToolMessage)]
     ajan_notu = durum["mesajlar"][-1].text if isinstance(durum["mesajlar"][-1], AIMessage) else ""
     girdi = (f"<talep>\n{chr(10).join(durum['talepler'])}\n</talep>\n\n"
              f"Kategori: {durum['kategori']} / ikinci konu: {durum.get('ikinci_konu') or 'yok'}\n\n"
@@ -443,13 +443,9 @@ GRAF = graf_olustur()
 # Dış arayüz
 # ---------------------------------------------------------------------------
 
-def arac_havuzu(musteri_no: str, guvensiz: bool = False, arac_kaynagi: str = "yerel") -> dict:
+def arac_havuzu(guvensiz: bool = False) -> dict:
     """Ajanın kullanabileceği tüm okuma araçları {ad: arac}. Kategori bunlardan alt küme seçer."""
-    if arac_kaynagi == "mcp":
-        from asistan.mcp_sunucu import mcp_araclarini_yukle
-        havuz = {a.name: a for a in mcp_araclarini_yukle(musteri_no)}
-    else:
-        havuz = {a.name: a for a in OKUMA_ARACLARI}
+    havuz = {a.name: a for a in OKUMA_ARACLARI}
     if guvensiz:
         from asistan.araclar_guvensiz import kart_islemleri_guvensiz
         log.warning("GUVENSIZ ARAC MODU: kart_islemleri musteri_no parametresi alıyor (sadece ders deneyi)")
@@ -474,7 +470,7 @@ def _sonuc(durum: dict, oturum_id: str) -> dict:
 
 
 def cevapla(talep: str, musteri_no: str, model_turu: str = "yerel", oturum_id: str | None = None,
-            guvensiz: bool = False, arac_kaynagi: str = "yerel") -> dict:
+            guvensiz: bool = False) -> dict:
     """Projenin ortak arayüzü. Dönen sözlük: {kategori, ikinci_konu, davranis, yanit,
     kullanilan_araclar, kaynaklar, adimlar} + oturum_id, onay_bekliyor.
 
@@ -483,7 +479,7 @@ def cevapla(talep: str, musteri_no: str, model_turu: str = "yerel", oturum_id: s
     """
     oturum_id = oturum_id or uuid.uuid4().hex[:8]
     config = {"configurable": {"thread_id": oturum_id, "model_turu": model_turu, "guvensiz": guvensiz,
-                               "arac_havuzu": arac_havuzu(musteri_no, guvensiz, arac_kaynagi)}}
+                               "arac_havuzu": arac_havuzu(guvensiz)}}
     durum = GRAF.invoke({"talep": talep, "musteri_no": musteri_no}, config)
     return _sonuc(durum, oturum_id)
 
@@ -502,12 +498,10 @@ if __name__ == "__main__":
     parser.add_argument("talep")
     parser.add_argument("musteri_no")
     parser.add_argument("--model", default="yerel", choices=["yerel", "bulut", "guclu"])
-    parser.add_argument("--mcp", action="store_true", help="araçları MCP sunucusu üzerinden kullan")
     parser.add_argument("--guvensiz", action="store_true", help="SADECE DERS DENEYİ: güvensiz kart_islemleri")
     args = parser.parse_args()
 
-    sonuc = cevapla(args.talep, args.musteri_no, args.model, guvensiz=args.guvensiz,
-                    arac_kaynagi="mcp" if args.mcp else "yerel")
+    sonuc = cevapla(args.talep, args.musteri_no, args.model, guvensiz=args.guvensiz)
     print("\n".join(f"  - {a}" for a in sonuc["adimlar"]))
     if sonuc["onay_bekliyor"]:
         print(f"\nİNSAN ONAYI GEREKLİ. Yanıt taslağı:\n  {sonuc['yanit']}")
