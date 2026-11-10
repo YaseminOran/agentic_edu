@@ -51,7 +51,7 @@ def sistem_mesaji() -> str:
 
 
 def siniflandir(talep: str, model_turu: str = "yerel") -> Siniflandirma:
-    """Maskelenmiş talebi sınıflandırır. Model şemaya uygun çıktı veremezse guven=0 döner
+    """Talebi sınıflandırır. Model şemaya uygun çıktı veremezse guven=0 döner
     (akış bunu "belirsiz" sayar ve netleştirme/temsilci yoluna gider: güvenli taraf)."""
     # Claude'da json_schema şemaya uymayı API düzeyinde zorlar; Ollama'da function_calling kullanıyoruz
     # (Mac'teki MLX motoru json_schema'yı desteklemeyebiliyor, bkz. Hafta 1 eğitmen notu).

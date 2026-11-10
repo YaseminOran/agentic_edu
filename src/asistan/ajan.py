@@ -1,4 +1,4 @@
-"""Asistanın LangGraph akışı (Hafta 2): maskeleme -> sınıflandırma -> kategoriye göre araç seti ->
+"""Asistanın LangGraph akışı (Hafta 2): sınıflandırma -> kategoriye göre araç seti ->
 ajan döngüsü -> yanıt taslağı -> risk kontrolü -> insan onayı -> sonuç.
 Prosedür araması (RAG) Hafta 3'te, self-check Hafta 4'te bu akışa eklenecek.
 
@@ -22,7 +22,6 @@ from asistan.araclar import OKUMA_ARACLARI, ApiHatasi, iade_talebi_olustur, must
 from asistan.ayarlar import model_getir
 from asistan.gunluk import log
 from asistan.kategoriler import AJANA_GITMEYENLER, KATEGORILER
-from asistan.maskeleme import maskele
 from asistan.siniflandirici import siniflandir
 
 ADIM_LIMITI = 6          # ajan döngüsünde en fazla kaç model çağrısı (kural 5)
@@ -40,8 +39,8 @@ TEMSILCI_YANITI = ("Talebinizi bir müşteri temsilcimize ilettik. En kısa sür
 # ---------------------------------------------------------------------------
 
 class Durum(TypedDict, total=False):
-    talep: str                  # bu turdaki talep (maskeli)
-    talepler: list[str]         # netleştirme turu dahil oturumdaki talepler (maskeli)
+    talep: str                  # bu turdaki talep
+    talepler: list[str]         # netleştirme turu dahil oturumdaki talepler
     musteri_no: str
     kategori: str
     ikinci_konu: str
@@ -55,30 +54,29 @@ class Durum(TypedDict, total=False):
     aktarim_nedeni: str
     davranis: str
     yanit: str
-    adimlar: list[str]          # okunabilir iz: her düğüm bir satır ekler (maskeli)
+    adimlar: list[str]          # okunabilir iz: her düğüm bir satır ekler
 
 
 def adim_ekle(durum: Durum, metin: str) -> list[str]:
     """Adımı hem loga yazar hem de durumdaki adım listesine ekler (yeni listeyi döner)."""
-    metin = maskele(metin)
     log.info("[%s] %s", durum.get("musteri_no", "?"), metin)
     return durum.get("adimlar", []) + [metin]
 
 
 # ---------------------------------------------------------------------------
-# 1) Maskeleme ve 2) sınıflandırma
+# 1) Yeni tur ve 2) sınıflandırma
 # ---------------------------------------------------------------------------
 
-def maskele_dugumu(durum: Durum) -> dict:
-    """Hassas veri modele gitmeden önce maskelenir. Yeni bir tur başladığı için tur alanları sıfırlanır."""
-    talep = maskele(durum["talep"])
+def baslat_dugumu(durum: Durum) -> dict:
+    """Yeni bir tur başlar: talep kaydedilir, önceki turdan kalan alanlar sıfırlanır."""
+    talep = durum["talep"]
     # Önceki tur netleştirme sorusuyla bittiyse yeni mesaj aynı talebin devamıdır
     onceki = durum.get("talepler", []) if durum.get("davranis") == "netlestir" else []
     yeni = {"talep": talep, "talepler": onceki + [talep], "adimlar": [], "kullanilan_araclar": [],
             "taslak": {}, "risk_nedenleri": [], "aktarim_nedeni": "", "davranis": "", "yanit": ""}
     if not onceki:
         yeni["netlestirme_sayisi"] = 0
-    yeni["adimlar"] = adim_ekle({**durum, **yeni}, f"maskeleme: {talep}")
+    yeni["adimlar"] = adim_ekle({**durum, **yeni}, f"talep: {talep}")
     return yeni
 
 
@@ -111,7 +109,7 @@ def hazir_yanit_dugumu(durum: Durum) -> dict:
     """Ajana gitmeyen kategoriler (guvenlik, diger): araç yok, model yok, hazır yanıt."""
     ayar = AJANA_GITMEYENLER[durum["kategori"]]
     if durum["kategori"] == "guvenlik":
-        # "Reddet ve kaydet": güvenlik olayı ayrı bir uyarı satırı olarak loglanır (maskeli)
+        # "Reddet ve kaydet": güvenlik olayı ayrı bir uyarı satırı olarak loglanır
         log.warning("GUVENLIK OLAYI musteri=%s talep=%r", durum["musteri_no"], durum["talep"])
     return {"davranis": ayar["davranis"], "yanit": ayar["hazir_yanit"],
             "adimlar": adim_ekle(durum, f"hazir yanit: {ayar['davranis']}")}
@@ -413,7 +411,7 @@ def temsilciye_aktar_dugumu(durum: Durum) -> dict:
 
 def graf_olustur():
     g = StateGraph(Durum)
-    g.add_node("maskele", maskele_dugumu)
+    g.add_node("baslat", baslat_dugumu)
     g.add_node("siniflandir", siniflandir_dugumu)
     g.add_node("hazir_yanit", hazir_yanit_dugumu)
     g.add_node("netlestir", netlestir_dugumu)
@@ -427,8 +425,8 @@ def graf_olustur():
     g.add_node("temsilciye_aktar", temsilciye_aktar_dugumu)
 
     # Sabit kenarlar. Diğer geçişleri düğümler Command(goto=...) ile kendileri seçer.
-    g.add_edge(START, "maskele")
-    g.add_edge("maskele", "siniflandir")
+    g.add_edge(START, "baslat")
+    g.add_edge("baslat", "siniflandir")
     g.add_edge("ajan_hazirla", "ajan")
     for son in ("hazir_yanit", "netlestir", "yanitla", "temsilciye_aktar"):
         g.add_edge(son, END)

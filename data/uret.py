@@ -319,11 +319,11 @@ def gecmis_talepleri_uret(rng: random.Random, musteriler: list[dict]) -> list[di
 
 
 # ---------------------------------------------------------------------------
-# Gelen talepler (Hafta 1 notebook'ları ve maskeleme denemeleri için)
+# Gelen talepler (Hafta 1 notebook'ları için)
 # ---------------------------------------------------------------------------
 
 # {ad}, {kart_no}, {tckn}, {iban}, {tutar} müşteri verisiyle doldurulur.
-# Bazı şablonlar bilerek hassas veri içerir: Hafta 2'de maskeleme bunlar üzerinde denenir.
+# Bazı şablonlar bilerek (sentetik) hassas veri içerir: kart no, TCKN, IBAN gibi.
 TALEP_SABLONLARI = [
     "Merhaba, kredi kartı ekstremin kesim tarihini nereden görebilirim?",
     "Kartımdan {tutar} TL iki kez çekilmiş, birini iade etmenizi istiyorum.",

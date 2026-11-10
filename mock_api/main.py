@@ -79,7 +79,7 @@ def saglik():
 
 @app.get("/musteri_bilgisi/{musteri_no}")
 def musteri_bilgisi(musteri_no: str):
-    """Müşteri profili ve kartları. DİKKAT: TCKN, kart no, IBAN maskesiz gelir; maskeleme istemci tarafında."""
+    """Müşteri profili ve kartları. Kimlik, kart no ve IBAN olduğu gibi döner (hepsi sentetik)."""
     return musteri_getir(musteri_no)
 
 
@@ -118,7 +118,7 @@ def gecmis_talepler(musteri_no: str):
 
 class AktarimIstegi(BaseModel):
     musteri_no: str
-    ozet: str      # maskelenmiş talep özeti
+    ozet: str      # talep özeti
     neden: str     # neden aktarıldı (adım limiti, araç hatası, ret...)
 
 
