@@ -9,7 +9,6 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - .:/workspace:cached
-      - claude_ayarlar:/root/.claude     # Claude Code girişi container yeniden kurulunca kaybolmasın
     working_dir: /workspace
     environment:
       PYTHONPATH: /workspace/src   # "import asistan" her yerden çalışsın
@@ -34,4 +33,3 @@ services:
 
 volumes:
   ollama_modeller:
-  claude_ayarlar:
