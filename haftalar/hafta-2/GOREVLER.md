@@ -61,7 +61,7 @@ Diğer dosyaları açmanız gerekmiyor. Ne işe yaradıklarını merak ederseniz
 `haftalar/hafta-2/02_ajan_adim_adim.ipynb` dosyasında **Bölüm 1 ve 2**:
 1. **Ajan döngüsü:** `ajan_calistir` fonksiyonu. Model araç istedikçe çalıştır, istemeyince dur.
    `adim_limiti=1` ile deneyin: ne oldu?
-2. **API entegrasyonu:** Servisi doğrudan çağırın, sonra aynı veriyi araç üzerinden alın. Araç hangi üç şeyi ekliyor?
+2. **API entegrasyonu:** Servisi doğrudan çağırın, sonra aynı veriyi araç üzerinden alın. Araç hangi iki güvenlik katmanını ekliyor?
 
 ## Görev 3 (Lab 3) – `hesap_durumu` aracını yazın (45 dk)
 `# TODO (Lab 3):` yorumlarını arayın: `src/asistan/araclar.py` ve `src/asistan/kategoriler.py`.
