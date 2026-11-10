@@ -6,6 +6,15 @@
 Bankaya gelen müşteri taleplerini sınıflandıran, araçlarla bilgi toplayan, prosedürlerden kaynaklı
 cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bir asistanı hafta hafta inşa ediyoruz.
 
+> **Hafta 2 (bu hafta) materyalleri `hafta-1` dalında.** Terminalde:
+> ```bash
+> git stash            # notebook çıktıları gibi yerel değişiklikleri kenara koyar
+> git fetch origin
+> git checkout hafta-1
+> git pull
+> ```
+> Kontrol: `haftalar/hafta-2` klasöründe üç notebook olmalı (`01_tool_calling`, `02_ajan_adim_adim`, `03_olc_ve_tartis`).
+
 | Hafta | Konu | Dal |
 |---|---|---|
 | 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme | `main` (başlangıç), `hafta-1` (çözüm) |

@@ -42,7 +42,15 @@ Diğer dosyaları açmanız gerekmiyor. Ne işe yaradıklarını merak ederseniz
 | 6 | Görev 5 | `03_olc_ve_tartis.ipynb`: güvenlik deneyleri, ölçme, hata analizi, model karşılaştırması | 2,5 saat |
 
 ## Hazırlık (15 dk)
-1. Kendi dalınızı açın: `git checkout hafta-1 && git checkout -b hafta-2-benim`
+1. `hafta-1` dalına geçin ve son hali alın:
+   ```bash
+   git stash            # notebook çıktıları gibi yerel değişiklikleri kenara koyar
+   git fetch origin
+   git checkout hafta-1
+   git pull
+   ```
+   Kontrol: `haftalar/hafta-2` klasöründe üç notebook olmalı. Gün içinde eğitmen "güncelleyin" derse: `git stash && git pull`
+   Lab 3'ü (`hesap_durumu`) önceden yazdıysanız, kodunuzu geri almak için en sonda: `git stash pop`
 2. `python kontrol.py` çalıştırın. Mock API satırında bir ⚠️ göreceksiniz: `hesap_durumu` henüz yazılmamış.
    Bu beklenen bir durum; Görev 3'te siz yazacaksınız.
 3. Mock API Dev Container'da otomatik başlar. Başlamadıysa ayrı bir terminalde:
@@ -118,12 +126,15 @@ her bölümün sonundaki **💬 Tartışma** sorularını birlikte konuşuyoruz.
 - [ ] `python eval/calistir.py` hatasız; T05 ve T22'de `hesap_durumu` çağrılıyor
 - [ ] Notebook ve görevlerdeki tartışma soruları cevaplandı
 
-Hazır çözüm: `git checkout hafta-2` (önce kendi çözümünüzü commit edin!)
+Lab 3'te takılırsanız çözümü alın: `git checkout origin/hafta-2 -- src/asistan/araclar.py src/asistan/kategoriler.py`
 
 ## Sık hatalar
 
 | Belirti | Neden | Çözüm |
 |---|---|---|
+| `haftalar/hafta-2` klasörü yok | `main` dalındasınız | `git fetch origin && git checkout hafta-1 && git pull` |
+| `git pull`: *Your local changes ... would be overwritten* | Notebook'u çalıştırınca dosyaya çıktı yazıldı | `git stash`, sonra `git pull` |
+| `git pull`: *There is no tracking information* | Kendi açtığınız bir daldasınız | `git stash`, `git checkout hafta-1`, `git pull` |
 | `kontrol.py`: Mock API ❌ "erişilemiyor" | Mock API çalışmıyor | Ayrı terminalde: `uvicorn mock_api.main:app --host 0.0.0.0 --port 8000` |
 | `kontrol.py`: Mock API ❌ `404 ... /musteri_bilgisi/...` | Hafta 1'den kalma eski bir mock API süreci açık | `pkill -f uvicorn`, sonra yeniden başlatın |
 | `Müşteri bulunamadı: M1001` | Hafta 1 müşteri numaraları kullanılıyor | Numaralar artık `M0001`–`M0030` |
