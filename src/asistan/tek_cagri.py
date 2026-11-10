@@ -2,6 +2,7 @@
 Tek bir LLM çağrısıyla talebi sınıflandırır (kategori + davranış) ve kısa bir yanıt taslağı yazar; araç kullanmaz.
 Hafta 2'de sadece etiketler yeni kategorilere (dijital_kanal yok, guvenlik = kötü niyetli talep,
 diger -> kapsam_disi) uyarlandı. Karşılaştırma: python eval/calistir.py --asistan tek_cagri
+Terminalden tek talep: python -m asistan.tek_cagri "Kartımdan aidat iki kez kesildi" M0007 [--model bulut]
 """
 
 from typing import Literal
@@ -128,3 +129,20 @@ def cevapla(talep: str, musteri_no: str, model_turu: str = "yerel") -> dict:
             f"siniflandirma: {sonuc.kategori} / {sonuc.davranis}",
         ],
     }
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Hafta 1 asistanını (araçsız, tek çağrı) tek bir talep için çalıştırır")
+    parser.add_argument("talep")
+    parser.add_argument("musteri_no")
+    parser.add_argument("--model", default="yerel", choices=["yerel", "bulut", "guclu"])
+    args = parser.parse_args()
+
+    sonuc = cevapla(args.talep, args.musteri_no, args.model)
+    print("\n".join(f"  - {a}" for a in sonuc["adimlar"]))
+    print(f"\nKategori : {sonuc['kategori']}")
+    print(f"Davranış : {sonuc['davranis']}")
+    print("Araçlar  : - (bu asistanın aracı yok, müşteri verisini göremez)")
+    print(f"Yanıt    : {sonuc['yanit']}")
