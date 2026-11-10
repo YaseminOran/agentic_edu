@@ -17,6 +17,14 @@ load_dotenv(PROJE_KOKU / ".env")
 if not Path("/.dockerenv").exists() and "host.docker.internal" in os.getenv("OLLAMA_URL", ""):
     os.environ["OLLAMA_URL"] = os.environ["OLLAMA_URL"].replace("host.docker.internal", "localhost")
 
+# Kurumsal proxy: bilgisayarda HTTP_PROXY tanımlıysa Python, yerel servislere (mock API, Ollama) giden
+# istekleri de proxy'ye gönderir; proxy bu adreslere ulaşamaz ve 503 döner. Yerel adresleri proxy dışında
+# tutuyoruz. Buluta (Claude) giden istekler proxy'yi kullanmaya devam eder.
+YEREL_ADRESLER = ["localhost", "127.0.0.1", "host.docker.internal", "ollama"]
+for _degisken in ("NO_PROXY", "no_proxy"):
+    _mevcut = [a.strip() for a in os.getenv(_degisken, "").split(",") if a.strip()]
+    os.environ[_degisken] = ",".join(_mevcut + [a for a in YEREL_ADRESLER if a not in _mevcut])
+
 
 def ayar(ad: str) -> str:
     """.env'deki bir değeri okur; boşsa anlaşılır bir hata verir."""
