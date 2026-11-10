@@ -12,6 +12,9 @@ services:
     working_dir: /workspace
     environment:
       PYTHONPATH: /workspace/src   # "import asistan" her yerden çalışsın
+      # Kurumsal proxy varsa yerel servisler (mock API, Ollama) proxy'ye gitmesin
+      NO_PROXY: localhost,127.0.0.1,host.docker.internal,ollama
+      no_proxy: localhost,127.0.0.1,host.docker.internal,ollama
     env_file:
       - path: .env
         required: false
