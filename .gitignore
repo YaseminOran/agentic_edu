@@ -16,3 +16,6 @@ logs/
 data/indeks/
 *.faiss
 *.pkl
+
+# Claude Code proje talimatları (yerel kalır, GitHub'a gitmez)
+CLAUDE.md

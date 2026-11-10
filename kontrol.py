@@ -84,7 +84,7 @@ def veri_dosyalari():
     beklenen = ["id", "talep", "musteri_no", "beklenen_kategori", "ikinci_konu", "beklenen_davranis",
                 "beklenen_araclar", "beklenen_kaynak", "zorluk", "not"]
     if kolonlar != beklenen:
-        raise RuntimeError(f"test_seti.csv kolonları CLAUDE.md'deki formata uymuyor: {kolonlar}")
+        raise RuntimeError(f"test_seti.csv kolonları beklenen formata uymuyor: {kolonlar}")
     prosedur_sayisi = len(list((PROJE_KOKU / "data" / "prosedurler").rglob("*.md")))
     return f"{len(dosyalar)} dosya + {prosedur_sayisi} prosedür"
 
