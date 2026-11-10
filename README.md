@@ -6,7 +6,7 @@
 Bankaya gelen müşteri taleplerini sınıflandıran, araçlarla bilgi toplayan, prosedürlerden kaynaklı
 cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bir asistanı hafta hafta inşa ediyoruz.
 
-> **Hafta 2 (bu hafta) materyalleri `hafta-1` dalında.** Terminalde:
+> **Hafta 2 (bu hafta) materyalleri `main` ve `hafta-1` dallarında.** Son hali almak için terminalde:
 > ```bash
 > git stash            # notebook çıktıları gibi yerel değişiklikleri kenara koyar
 > git fetch origin
@@ -17,8 +17,8 @@ cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bi
 
 | Hafta | Konu | Dal |
 |---|---|---|
-| 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme | `main` (başlangıç), `hafta-1` (çözüm) |
-| 2 | Tek ajan ve tool calling: ajan döngüsü, API entegrasyonu, worker agent, insan onayı, hata yönetimi | `hafta-1` (başlangıç), `hafta-2` (çözüm) |
+| 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme (teori) | – |
+| 2 | Tek ajan ve tool calling: ajan döngüsü, API entegrasyonu, worker agent, insan onayı, hata yönetimi | `main` ve `hafta-1` (başlangıç, aynı içerik), `hafta-2` (çözüm) |
 | 3 | Prosedürlerden RAG (FAISS), kaynak gösterme | `hafta-3` |
 | 4 | Prompt şablonları, self-check, onaylı yazma işlemleri | `hafta-4` |
 | 5 | Kapsamlı değerlendirme ve Streamlit demo | `hafta-5` |
@@ -49,7 +49,7 @@ Her haftanın görevleri `haftalar/hafta-N/GOREVLER.md` dosyasındadır:
 - Hafta 1: [haftalar/hafta-1/GOREVLER.md](haftalar/hafta-1/GOREVLER.md)
 - Hafta 2: [haftalar/hafta-2/GOREVLER.md](haftalar/hafta-2/GOREVLER.md) (sık hatalar dahil)
 
-Her hafta bir önceki haftanın çözüm dalından başlar (Hafta 2 için `hafta-1`). O haftanın lab görevleri kodda
+Her hafta bir önceki haftanın çözüm dalından başlar (Hafta 2 için `hafta-1`; `main` de aynı içeriktedir). O haftanın lab görevleri kodda
 `# TODO (Lab N):` yorumuyla işaretlidir.
 
 ## Klasörler

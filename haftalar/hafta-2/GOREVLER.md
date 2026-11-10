@@ -132,7 +132,7 @@ Lab 3'te takılırsanız çözümü alın: `git checkout origin/hafta-2 -- src/a
 
 | Belirti | Neden | Çözüm |
 |---|---|---|
-| `haftalar/hafta-2` klasörü yok | `main` dalındasınız | `git fetch origin && git checkout hafta-1 && git pull` |
+| `haftalar/hafta-2` klasörü ya da `tek_cagri.py` yok | Son hali almadınız | `git stash && git pull` (olmazsa: `git fetch origin && git checkout hafta-1 && git pull`) |
 | `git pull`: *Your local changes ... would be overwritten* | Notebook'u çalıştırınca dosyaya çıktı yazıldı | `git stash`, sonra `git pull` |
 | `git pull`: *There is no tracking information* | Kendi açtığınız bir daldasınız | `git stash`, `git checkout hafta-1`, `git pull` |
 | `kontrol.py`: Mock API ❌ "erişilemiyor" | Mock API çalışmıyor | Ayrı terminalde: `uvicorn mock_api.main:app --host 0.0.0.0 --port 8000` |
