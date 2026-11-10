@@ -12,9 +12,9 @@
 1. Dev container'ı açın, terminalde `python kontrol.py` çalıştırın. Tüm satırlar ✅ veya ⚠️ olmalı.
    ❌ varsa satırdaki öneriyi uygulayın; çözülmezse eğitmene haber verin.
 2. Şu dosyaları okuyun (hepsi kısa):
-   - `src/asistan/asistan.py` – asistanın tamamı (~70 satır)
+   - `src/asistan/tek_cagri.py` – asistanın tamamı (~70 satır; Hafta 2'den itibaren adı `tek_cagri.py`)
    - `eval/test_seti.csv` – asistanın ölçüleceği 30 talep
-   - `data/prosedurler/PRS-GNL-001_sikayet_yonetimi_ve_temsilci_aktarimi.md` – bankanın kuralları
+   - `data/prosedurler/genel/PRS-GNL-001_sikayet_yonetimi_ve_temsilci_aktarimi.md` – bankanın kuralları
 
 ## Görev 1 – Notebook'lar (45 dk)
 İki notebook'u sırayla baştan sona çalıştırın:
@@ -49,7 +49,7 @@ Bakılacak yerler:
 **Teslim:** 3–5 maddelik hata listesi.
 
 ## Görev 4 – Sistem mesajını iyileştirin (90 dk)
-Sadece `src/asistan/asistan.py` içindeki `SISTEM_MESAJI`'nı değiştirerek skoru artırın.
+Sadece `src/asistan/tek_cagri.py` içindeki `SISTEM_MESAJI`'nı değiştirerek skoru artırın.
 Her değişiklikten sonra değerlendirmeyi tekrar çalıştırın (`--limit 10` ile hızlı deneyebilirsiniz).
 
 Fikirler:

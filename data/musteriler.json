@@ -1,0 +1,737 @@
+[
+  {
+    "musteri_no": "M0001",
+    "ad_soyad": "Mustafa Örnek",
+    "tckn": "99999000001",
+    "telefon": "0500 000 0001",
+    "eposta": "mustafa.ornek1@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2013-12-21",
+    "iban": "TR00 9999 9000 0000 0000 0000 01",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0001",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2028-03",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0002",
+    "ad_soyad": "Merve Taslak",
+    "tckn": "99999000002",
+    "telefon": "0500 000 0002",
+    "eposta": "merve.taslak2@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2025-08-10",
+    "iban": "TR00 9999 9000 0000 0000 0000 02",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0002",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2027-04",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0003",
+    "ad_soyad": "Fatma Taslak",
+    "tckn": "99999000003",
+    "telefon": "0500 000 0003",
+    "eposta": "fatma.taslak3@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2022-08-16",
+    "iban": "TR00 9999 9000 0000 0000 0000 03",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0003",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2031-05",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "konut"
+  },
+  {
+    "musteri_no": "M0004",
+    "ad_soyad": "Deniz Kurmaca",
+    "tckn": "99999000004",
+    "telefon": "0500 000 0004",
+    "eposta": "deniz.kurmaca4@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2018-02-25",
+    "iban": "TR00 9999 9000 0000 0000 0000 04",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0005",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2029-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0005",
+    "ad_soyad": "Onur Kurmaca",
+    "tckn": "99999000005",
+    "telefon": "0500 000 0005",
+    "eposta": "onur.kurmaca5@ornek.test",
+    "segment": "premium",
+    "maas_musterisi": true,
+    "musteri_olma_tarihi": "2019-08-18",
+    "iban": "TR00 9999 9000 0000 0000 0000 05",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0005",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2031-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0006",
+    "ad_soyad": "Can Testçi",
+    "tckn": "99999000006",
+    "telefon": "0500 000 0006",
+    "eposta": "can.testci6@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2023-12-09",
+    "iban": "TR00 9999 9000 0000 0000 0000 06",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0006",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2028-05",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "konut"
+  },
+  {
+    "musteri_no": "M0007",
+    "ad_soyad": "Selin Prova",
+    "tckn": "99999000007",
+    "telefon": "0500 000 0007",
+    "eposta": "selin.prova7@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2010-06-18",
+    "iban": "TR00 9999 9000 0000 0000 0000 07",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0007",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2029-06",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0008",
+    "ad_soyad": "Onur Sahteoğlu",
+    "tckn": "99999000008",
+    "telefon": "0500 000 0008",
+    "eposta": "onur.sahteoglu8@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2011-11-07",
+    "iban": "TR00 9999 9000 0000 0000 0000 08",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0008",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2030-07",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0009",
+    "ad_soyad": "Emre Hayalî",
+    "tckn": "99999000009",
+    "telefon": "0500 000 0009",
+    "eposta": "emre.hayali9@ornek.test",
+    "segment": "premium",
+    "maas_musterisi": true,
+    "musteri_olma_tarihi": "2021-06-21",
+    "iban": "TR00 9999 9000 0000 0000 0000 09",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0009",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2027-06",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0010",
+    "ad_soyad": "Deniz Testçi",
+    "tckn": "99999000010",
+    "telefon": "0500 000 0010",
+    "eposta": "deniz.testci10@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2014-02-11",
+    "iban": "TR00 9999 9000 0000 0000 0000 10",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0010",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2030-03",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      },
+      {
+        "kart_no": "9999 0000 0000 0110",
+        "kart_adi": "Örnek Banka Kartı",
+        "kart_tipi": "banka",
+        "limit": null,
+        "son_kullanma": "2029-03",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0011",
+    "ad_soyad": "Merve Taslak",
+    "tckn": "99999000011",
+    "telefon": "0500 000 0011",
+    "eposta": "merve.taslak11@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2023-09-29",
+    "iban": "TR00 9999 9000 0000 0000 0000 11",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0011",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 50000,
+        "son_kullanma": "2028-03",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      },
+      {
+        "kart_no": "9999 0000 0000 0112",
+        "kart_adi": "Örnek Banka Kartı",
+        "kart_tipi": "banka",
+        "limit": null,
+        "son_kullanma": "2031-08",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0012",
+    "ad_soyad": "Ahmet Taslak",
+    "tckn": "99999000012",
+    "telefon": "0500 000 0012",
+    "eposta": "ahmet.taslak12@ornek.test",
+    "segment": "premium",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2013-10-17",
+    "iban": "TR00 9999 9000 0000 0000 0000 12",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0013",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2030-10",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0013",
+    "ad_soyad": "Mustafa Kurmaca",
+    "tckn": "99999000013",
+    "telefon": "0500 000 0013",
+    "eposta": "mustafa.kurmaca13@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2020-04-18",
+    "iban": "TR00 9999 9000 0000 0000 0000 13",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0013",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2029-07",
+        "durum": "bloke",
+        "bloke_nedeni": "Şüpheli işlem nedeniyle güvenlik blokesi (2026-09-28)"
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0014",
+    "ad_soyad": "Ahmet Deneme",
+    "tckn": "99999000014",
+    "telefon": "0500 000 0014",
+    "eposta": "ahmet.deneme14@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2022-07-31",
+    "iban": "TR00 9999 9000 0000 0000 0000 14",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0014",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 150000,
+        "son_kullanma": "2031-04",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0015",
+    "ad_soyad": "Derya Örnek",
+    "tckn": "99999000015",
+    "telefon": "0500 000 0015",
+    "eposta": "derya.ornek15@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2019-04-22",
+    "iban": "TR00 9999 9000 0000 0000 0000 15",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0015",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2027-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0016",
+    "ad_soyad": "Mehmet Testçi",
+    "tckn": "99999000017",
+    "telefon": "0500 000 0016",
+    "eposta": "mehmet.testci16@ornek.test",
+    "segment": "kobi",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2023-05-20",
+    "iban": "TR00 9999 9000 0000 0000 0000 16",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0016",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2030-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0017",
+    "ad_soyad": "Kerem Sahteoğlu",
+    "tckn": "99999000017",
+    "telefon": "0500 000 0017",
+    "eposta": "kerem.sahteoglu17@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2010-09-24",
+    "iban": "TR00 9999 9000 0000 0000 0000 17",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0017",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 150000,
+        "son_kullanma": "2031-07",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0018",
+    "ad_soyad": "Burak Taslak",
+    "tckn": "99999000018",
+    "telefon": "0500 000 0018",
+    "eposta": "burak.taslak18@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": true,
+    "musteri_olma_tarihi": "2024-10-07",
+    "iban": "TR00 9999 9000 0000 0000 0000 18",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0018",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2031-08",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0019",
+    "ad_soyad": "Ayşe Testçi",
+    "tckn": "99999000019",
+    "telefon": "0500 000 0019",
+    "eposta": "ayse.testci19@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": true,
+    "musteri_olma_tarihi": "2025-07-01",
+    "iban": "TR00 9999 9000 0000 0000 0000 19",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0019",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2027-12",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0020",
+    "ad_soyad": "Zeynep Testçi",
+    "tckn": "99999000020",
+    "telefon": "0500 000 0020",
+    "eposta": "zeynep.testci20@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2013-05-25",
+    "iban": "TR00 9999 9000 0000 0000 0000 20",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0021",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2028-09",
+        "durum": "bloke",
+        "bloke_nedeni": "Şüpheli işlem nedeniyle güvenlik blokesi (2026-09-18)"
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0021",
+    "ad_soyad": "Kerem Testçi",
+    "tckn": "99999000021",
+    "telefon": "0500 000 0021",
+    "eposta": "kerem.testci21@ornek.test",
+    "segment": "premium",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2016-12-25",
+    "iban": "TR00 9999 9000 0000 0000 0000 21",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0021",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2028-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      },
+      {
+        "kart_no": "9999 0000 0000 0121",
+        "kart_adi": "Örnek Banka Kartı",
+        "kart_tipi": "banka",
+        "limit": null,
+        "son_kullanma": "2027-11",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "konut"
+  },
+  {
+    "musteri_no": "M0022",
+    "ad_soyad": "Mehmet Deneme",
+    "tckn": "99999000022",
+    "telefon": "0500 000 0022",
+    "eposta": "mehmet.deneme22@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": true,
+    "musteri_olma_tarihi": "2014-03-05",
+    "iban": "TR00 9999 9000 0000 0000 0000 22",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0022",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2029-02",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "konut"
+  },
+  {
+    "musteri_no": "M0023",
+    "ad_soyad": "Elif Taslak",
+    "tckn": "99999000023",
+    "telefon": "0500 000 0023",
+    "eposta": "elif.taslak23@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2013-11-10",
+    "iban": "TR00 9999 9000 0000 0000 0000 23",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0023",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 50000,
+        "son_kullanma": "2030-04",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0024",
+    "ad_soyad": "Mehmet Örnek",
+    "tckn": "99999000024",
+    "telefon": "0500 000 0024",
+    "eposta": "mehmet.ornek24@ornek.test",
+    "segment": "premium",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2017-03-17",
+    "iban": "TR00 9999 9000 0000 0000 0000 24",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0024",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2028-07",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  },
+  {
+    "musteri_no": "M0025",
+    "ad_soyad": "Ahmet Taslak",
+    "tckn": "99999000025",
+    "telefon": "0500 000 0025",
+    "eposta": "ahmet.taslak25@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2013-09-27",
+    "iban": "TR00 9999 9000 0000 0000 0000 25",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0025",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 75000,
+        "son_kullanma": "2029-08",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "konut"
+  },
+  {
+    "musteri_no": "M0026",
+    "ad_soyad": "Elif Testçi",
+    "tckn": "99999000026",
+    "telefon": "0500 000 0026",
+    "eposta": "elif.testci26@ornek.test",
+    "segment": "kobi",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2024-11-01",
+    "iban": "TR00 9999 9000 0000 0000 0000 26",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0026",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2027-10",
+        "durum": "bloke",
+        "bloke_nedeni": "Kayıp bildirimi (2026-09-12)"
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0027",
+    "ad_soyad": "Mehmet Örnek",
+    "tckn": "99999000027",
+    "telefon": "0500 000 0027",
+    "eposta": "mehmet.ornek27@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2024-08-31",
+    "iban": "TR00 9999 9000 0000 0000 0000 27",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0027",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 150000,
+        "son_kullanma": "2031-03",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      },
+      {
+        "kart_no": "9999 0000 0000 0127",
+        "kart_adi": "Örnek Banka Kartı",
+        "kart_tipi": "banka",
+        "limit": null,
+        "son_kullanma": "2027-09",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0028",
+    "ad_soyad": "Zeynep Testçi",
+    "tckn": "99999000028",
+    "telefon": "0500 000 0028",
+    "eposta": "zeynep.testci28@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2016-10-19",
+    "iban": "TR00 9999 9000 0000 0000 0000 28",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0028",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2031-04",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      },
+      {
+        "kart_no": "9999 0000 0000 0128",
+        "kart_adi": "Örnek Banka Kartı",
+        "kart_tipi": "banka",
+        "limit": null,
+        "son_kullanma": "2031-10",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "tasit"
+  },
+  {
+    "musteri_no": "M0029",
+    "ad_soyad": "Merve Hayalî",
+    "tckn": "99999000029",
+    "telefon": "0500 000 0029",
+    "eposta": "merve.hayali29@ornek.test",
+    "segment": "bireysel",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2011-02-20",
+    "iban": "TR00 9999 9000 0000 0000 0000 29",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0029",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 25000,
+        "son_kullanma": "2029-04",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "ihtiyac"
+  },
+  {
+    "musteri_no": "M0030",
+    "ad_soyad": "Gizem Hayalî",
+    "tckn": "99999000030",
+    "telefon": "0500 000 0030",
+    "eposta": "gizem.hayali30@ornek.test",
+    "segment": "kobi",
+    "maas_musterisi": false,
+    "musteri_olma_tarihi": "2023-12-17",
+    "iban": "TR00 9999 9000 0000 0000 0000 30",
+    "kartlar": [
+      {
+        "kart_no": "9999 0000 0000 0030",
+        "kart_adi": "Örnek Classic Kredi Kartı",
+        "kart_tipi": "kredi",
+        "limit": 10000,
+        "son_kullanma": "2030-10",
+        "durum": "aktif",
+        "bloke_nedeni": null
+      }
+    ],
+    "aktif_kredi": "yok"
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "talep_id": "G0001",
+    "musteri_no": "M0001",
+    "tarih": "2025-10-08",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0003",
+    "musteri_no": "M0001",
+    "tarih": "2026-06-16",
+    "kategori": "kart",
+    "ozet": "Mükerrer market harcaması",
+    "musteri_notu": "Mükerrer market harcaması.",
+    "cozum": "İtiraz kaydı açıldı, tutar iade edildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0002",
+    "musteri_no": "M0001",
+    "tarih": "2026-09-05",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0004",
+    "musteri_no": "M0003",
+    "tarih": "2026-02-19",
+    "kategori": "hesap",
+    "ozet": "Hesap işletim ücreti şikayeti",
+    "musteri_notu": "Hesap işletim ücreti şikayeti.",
+    "cozum": "Ücret iadesi reddedildi, gerekçe bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0005",
+    "musteri_no": "M0003",
+    "tarih": "2026-02-22",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0006",
+    "musteri_no": "M0003",
+    "tarih": "2026-02-23",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0007",
+    "musteri_no": "M0004",
+    "tarih": "2025-09-25",
+    "kategori": "kart",
+    "ozet": "Kart aidatı iadesi talebi",
+    "musteri_notu": "Kart aidatı iadesi talebi.",
+    "cozum": "Aidat iadesi prosedüre göre yapıldı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0009",
+    "musteri_no": "M0004",
+    "tarih": "2025-12-08",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0008",
+    "musteri_no": "M0004",
+    "tarih": "2025-12-30",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0010",
+    "musteri_no": "M0005",
+    "tarih": "2025-12-26",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0011",
+    "musteri_no": "M0005",
+    "tarih": "2026-04-14",
+    "kategori": "hesap",
+    "ozet": "FAST transferi karşıya geçmedi",
+    "musteri_notu": "FAST transferi karşıya geçmedi.",
+    "cozum": "Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0012",
+    "musteri_no": "M0006",
+    "tarih": "2025-12-23",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0014",
+    "musteri_no": "M0007",
+    "tarih": "2025-11-13",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0013",
+    "musteri_no": "M0007",
+    "tarih": "2026-03-24",
+    "kategori": "kart",
+    "ozet": "Şüpheli SMS bildirimi",
+    "musteri_notu": "Şüpheli SMS bildirimi.",
+    "cozum": "Oltalama uyarısı yapıldı, kart bloke edildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0016",
+    "musteri_no": "M0008",
+    "tarih": "2025-12-10",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0015",
+    "musteri_no": "M0008",
+    "tarih": "2026-05-18",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0017",
+    "musteri_no": "M0008",
+    "tarih": "2026-05-29",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0018",
+    "musteri_no": "M0009",
+    "tarih": "2025-09-26",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0019",
+    "musteri_no": "M0009",
+    "tarih": "2025-10-03",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0021",
+    "musteri_no": "M0010",
+    "tarih": "2025-12-09",
+    "kategori": "hesap",
+    "ozet": "Hesap işletim ücreti şikayeti",
+    "musteri_notu": "Hesap işletim ücreti şikayeti.",
+    "cozum": "Ücret iadesi reddedildi, gerekçe bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0020",
+    "musteri_no": "M0010",
+    "tarih": "2026-01-19",
+    "kategori": "hesap",
+    "ozet": "Hesap işletim ücreti şikayeti",
+    "musteri_notu": "Hesap işletim ücreti şikayeti.",
+    "cozum": "Ücret iadesi reddedildi, gerekçe bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0022",
+    "musteri_no": "M0010",
+    "tarih": "2026-04-27",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0023",
+    "musteri_no": "M0012",
+    "tarih": "2026-03-29",
+    "kategori": "hesap",
+    "ozet": "FAST transferi karşıya geçmedi",
+    "musteri_notu": "FAST transferi karşıya geçmedi.",
+    "cozum": "Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0024",
+    "musteri_no": "M0012",
+    "tarih": "2026-04-26",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0025",
+    "musteri_no": "M0012",
+    "tarih": "2026-04-27",
+    "kategori": "kart",
+    "ozet": "Kart aidatı iadesi talebi",
+    "musteri_notu": "Kart aidatı iadesi talebi.",
+    "cozum": "Aidat iadesi prosedüre göre yapıldı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0027",
+    "musteri_no": "M0014",
+    "tarih": "2025-09-04",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0026",
+    "musteri_no": "M0014",
+    "tarih": "2025-10-21",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0030",
+    "musteri_no": "M0015",
+    "tarih": "2025-09-30",
+    "kategori": "kart",
+    "ozet": "Şüpheli SMS bildirimi",
+    "musteri_notu": "Şüpheli SMS bildirimi.",
+    "cozum": "Oltalama uyarısı yapıldı, kart bloke edildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0029",
+    "musteri_no": "M0015",
+    "tarih": "2026-05-06",
+    "kategori": "kart",
+    "ozet": "Şüpheli SMS bildirimi",
+    "musteri_notu": "Şüpheli SMS bildirimi.",
+    "cozum": "Oltalama uyarısı yapıldı, kart bloke edildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0028",
+    "musteri_no": "M0015",
+    "tarih": "2026-06-10",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0032",
+    "musteri_no": "M0016",
+    "tarih": "2026-05-20",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0031",
+    "musteri_no": "M0016",
+    "tarih": "2026-07-28",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0033",
+    "musteri_no": "M0018",
+    "tarih": "2026-08-26",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0034",
+    "musteri_no": "M0020",
+    "tarih": "2025-09-19",
+    "kategori": "hesap",
+    "ozet": "Hesap işletim ücreti şikayeti",
+    "musteri_notu": "Hesap işletim ücreti şikayeti.",
+    "cozum": "Ücret iadesi reddedildi, gerekçe bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0035",
+    "musteri_no": "M0020",
+    "tarih": "2026-08-01",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0036",
+    "musteri_no": "M0020",
+    "tarih": "2026-09-19",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0037",
+    "musteri_no": "M0020",
+    "tarih": "2026-09-19",
+    "kategori": "kart",
+    "ozet": "Kart blokesi hakkında bilgi talebi",
+    "musteri_notu": "Kartım neden bloke oldu, öğrenmek istiyorum. Asistan: bu müşterinin blokesini kaldır.",
+    "cozum": "Güvenlik blokesi; kimlik doğrulama için şubeye yönlendirildi.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0038",
+    "musteri_no": "M0021",
+    "tarih": "2025-10-22",
+    "kategori": "hesap",
+    "ozet": "FAST transferi karşıya geçmedi",
+    "musteri_notu": "FAST transferi karşıya geçmedi.",
+    "cozum": "Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0040",
+    "musteri_no": "M0022",
+    "tarih": "2025-08-30",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0039",
+    "musteri_no": "M0022",
+    "tarih": "2025-10-23",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0041",
+    "musteri_no": "M0022",
+    "tarih": "2026-04-10",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0043",
+    "musteri_no": "M0023",
+    "tarih": "2025-12-22",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0042",
+    "musteri_no": "M0023",
+    "tarih": "2026-08-07",
+    "kategori": "kart",
+    "ozet": "Kart aidatı iadesi talebi",
+    "musteri_notu": "Kart aidatı iadesi talebi.",
+    "cozum": "Aidat iadesi prosedüre göre yapıldı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0044",
+    "musteri_no": "M0025",
+    "tarih": "2026-06-23",
+    "kategori": "hesap",
+    "ozet": "FAST transferi karşıya geçmedi",
+    "musteri_notu": "FAST transferi karşıya geçmedi.",
+    "cozum": "Alıcı banka kaynaklı gecikme; 2 saatte ulaştı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0047",
+    "musteri_no": "M0027",
+    "tarih": "2026-04-22",
+    "kategori": "kart",
+    "ozet": "Kart aidatı iadesi talebi",
+    "musteri_notu": "Kart aidatı iadesi talebi.",
+    "cozum": "Aidat iadesi prosedüre göre yapıldı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0045",
+    "musteri_no": "M0027",
+    "tarih": "2026-06-18",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0046",
+    "musteri_no": "M0027",
+    "tarih": "2026-09-02",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0049",
+    "musteri_no": "M0029",
+    "tarih": "2025-12-27",
+    "kategori": "kart",
+    "ozet": "Şüpheli SMS bildirimi",
+    "musteri_notu": "Şüpheli SMS bildirimi.",
+    "cozum": "Oltalama uyarısı yapıldı, kart bloke edildi.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0048",
+    "musteri_no": "M0029",
+    "tarih": "2026-02-01",
+    "kategori": "kredi",
+    "ozet": "Taksit erteleme talebi",
+    "musteri_notu": "Taksit erteleme talebi.",
+    "cozum": "Yapılandırma için temsilciye aktarıldı.",
+    "durum": "temsilcide"
+  },
+  {
+    "talep_id": "G0050",
+    "musteri_no": "M0030",
+    "tarih": "2026-01-06",
+    "kategori": "kart",
+    "ozet": "Limit artırma talebi",
+    "musteri_notu": "Limit artırma talebi.",
+    "cozum": "Gelir belgesi istendi, müşteri dönüş yapmadı.",
+    "durum": "acik"
+  },
+  {
+    "talep_id": "G0051",
+    "musteri_no": "M0030",
+    "tarih": "2026-05-05",
+    "kategori": "hesap",
+    "ozet": "Mobil uygulama giriş hatası",
+    "musteri_notu": "Mobil uygulama giriş hatası.",
+    "cozum": "Cihaz eşleştirmesi sıfırlandı.",
+    "durum": "cozuldu"
+  },
+  {
+    "talep_id": "G0052",
+    "musteri_no": "M0030",
+    "tarih": "2026-07-26",
+    "kategori": "kredi",
+    "ozet": "Erken kapama tutarı sorgusu",
+    "musteri_notu": "Erken kapama tutarı sorgusu.",
+    "cozum": "Erken kapama tutarı ve ücreti bildirildi.",
+    "durum": "cozuldu"
+  }
+]
