@@ -11,6 +11,12 @@ from dotenv import load_dotenv
 PROJE_KOKU = Path(__file__).resolve().parents[2]
 load_dotenv(PROJE_KOKU / ".env")
 
+# .env'deki "host.docker.internal" adresi sadece container içinden çözülür. Container dışında
+# (ör. Mac'te .venv ile) aynı makinedeki Ollama'ya localhost üzerinden ulaşılır. Böylece .env'yi
+# değiştirmeden proje hem container'da hem lokalde çalışır. (/.dockerenv: Docker container'ı işareti)
+if not Path("/.dockerenv").exists() and "host.docker.internal" in os.getenv("OLLAMA_URL", ""):
+    os.environ["OLLAMA_URL"] = os.environ["OLLAMA_URL"].replace("host.docker.internal", "localhost")
+
 
 def ayar(ad: str) -> str:
     """.env'deki bir değeri okur; boşsa anlaşılır bir hata verir."""
