@@ -37,8 +37,8 @@ ISYERLERI = [
     ("DENEME GIYIM", 400, 6000),
 ]
 SUPHELI_ISYERLERI = ["FAKE STORE LTD (USD)", "TEST GAMING ONLINE (EUR)", "SAHTE KRIPTO BORSA"]
-KART_AIDATI = 750.00          # PRS-KRT-001 bölüm 2 ile aynı (kurgusal)
-HESAP_ISLETIM_UCRETI = 45.00  # PRS-HSP-001 bölüm 1 ile aynı (kurgusal)
+KART_AIDATI = 750.00          # prosedurler/kart/kart_aidati.md ile aynı (kurgusal)
+HESAP_ISLETIM_UCRETI = 45.00  # prosedurler/hesap/isletim_ucreti.md ile aynı (kurgusal)
 
 
 # ---------------------------------------------------------------------------
