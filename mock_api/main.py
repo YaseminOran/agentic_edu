@@ -1,5 +1,7 @@
-"""Sahte banka servisleri (Hafta 1'de eklendi, Hafta 2'de genişletildi).
+"""Sahte banka servisleri (Hafta 1'de eklendi, Hafta 2 ve 3'te genişletildi).
 data/ altındaki sentetik JSON'ları HTTP üzerinden sunar: 5 okuma ucu ajanın araçlarıdır,
+Hafta 3'te eklenen doviz_kuru ve harici_duyuru uçları bankanın DIŞINDAKİ bir sağlayıcıyı taklit eder
+(harici veri: güvenilmez kabul edilir, içinde talimat gibi görünen metin olabilir).
 yazma uçları (temsilciye_aktar, iade_talebi_olustur, kart_bloke) sadece kod tarafından,
 insan onayından sonra çağrılır. Veri bellekte tutulur; sunucu yeniden başlayınca sıfırlanır.
 
@@ -40,6 +42,7 @@ KART_ISLEMLERI = json_oku("kart_islemleri.json")
 HESAP_DURUMU = {h["musteri_no"]: h for h in json_oku("hesap_durumu.json")}
 KREDI_BASVURULARI = json_oku("kredi_basvurulari.json")
 GECMIS_TALEPLER = json_oku("gecmis_talepler.json")
+HARICI_VERI = json_oku("harici_veri.json")  # Hafta 3: harici kur sağlayıcısı (sözlük)
 
 # Yazma işlemlerinin kaydı (bellekte)
 AKTARIMLAR: list[dict] = []
@@ -110,6 +113,27 @@ def gecmis_talepler(musteri_no: str):
     """Müşterinin daha önce açtığı talepler. musteri_notu alanı müşterinin kendi yazdığı serbest metindir."""
     musteri_getir(musteri_no)
     return [t for t in GECMIS_TALEPLER if t["musteri_no"] == musteri_no]
+
+
+# ---------------------------------------------------------------------------
+# Harici uçlar (Hafta 3): banka dışı bir sağlayıcıyı taklit eder; müşteriye özel değildir
+# ---------------------------------------------------------------------------
+
+@app.get("/doviz_kuru/{doviz}")
+def doviz_kuru(doviz: str):
+    """Harici sağlayıcının döviz kuru ve sağlayıcının son duyurusu. Bu veri bankanın değildir."""
+    kur = next((k for k in HARICI_VERI["kurlar"] if k["doviz"] == doviz.upper()), None)
+    if kur is None:
+        desteklenen = ", ".join(k["doviz"] for k in HARICI_VERI["kurlar"])
+        raise HTTPException(status_code=404, detail=f"Desteklenmeyen döviz: {doviz} (desteklenen: {desteklenen})")
+    return {**kur, "tarih": HARICI_VERI["tarih"], "saglayici": HARICI_VERI["saglayici"],
+            "saglayici_duyurusu": HARICI_VERI["duyurular"][-1]["metin"]}
+
+
+@app.get("/harici_duyuru")
+def harici_duyuru():
+    """Harici sağlayıcının duyuruları (inceleme için; ajanın aracı değildir)."""
+    return HARICI_VERI["duyurular"]
 
 
 # ---------------------------------------------------------------------------

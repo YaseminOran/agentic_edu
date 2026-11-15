@@ -32,8 +32,8 @@ cevap bulan, yanıt taslağı hazırlayan ve riskli durumları insana aktaran bi
    - Eğitmenden aldığınız `ANTHROPIC_API_KEY` değerini girin.
 3. VS Code'da klasörü açın → *Reopen in Container*.
 4. Modelleri indirin (bir kez):
-   - Mac (host terminalinde): `ollama pull qwen3.5:4b && ollama pull nomic-embed-text`
-   - Windows/Linux: `docker compose exec ollama ollama pull qwen3.5:4b` ve `docker compose exec ollama ollama pull nomic-embed-text`
+   - Mac (host terminalinde): `ollama pull qwen3.5:4b && ollama pull bge-m3`
+   - Windows/Linux: `docker compose exec ollama ollama pull qwen3.5:4b` ve `docker compose exec ollama ollama pull bge-m3`
 5. Container terminalinde kontrol edin:
 
 ```bash

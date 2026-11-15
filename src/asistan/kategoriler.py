@@ -1,4 +1,4 @@
-"""Talep kategorileri ve her kategorinin araç seti / prosedür klasörü (Hafta 2).
+"""Talep kategorileri ve her kategorinin araç seti / prosedür klasörü (Hafta 2; Hafta 3'te doviz_kuru).
 Ajan TEKTİR; kategoriye göre sadece araç listesi ve prosedür klasörü değişir.
 Yeni bir alan eklemek için kod değil, bu sözlük değişir (5. haftada kendi probleminize uyarlarken).
 """
@@ -19,10 +19,9 @@ KATEGORILER = {
     },
     "hesap": {
         "aciklama": "Vadesiz/vadeli hesap, bakiye, hesap blokesi, hesap ücretleri, hesap kapama, IBAN, "
-                    "EFT/havale/FAST, mobil/internet şube ve şifre sorunları, hesaptan para kaybettiren "
+                    "EFT/havale/FAST, döviz alımı ve kur, mobil/internet şube ve şifre sorunları, hesaptan para kaybettiren "
                     "dolandırıcılık MAĞDURİYETİ.",
-        # TODO (Lab 3) çözümü: hesap_durumu aracı bu kategoriye bağlandı
-        "araclar": ["musteri_bilgisi", "hesap_durumu", "gecmis_talepler", "prosedur_ara"],
+        "araclar": ["musteri_bilgisi", "hesap_durumu", "gecmis_talepler", "prosedur_ara", "doviz_kuru"],
         "prosedur_klasoru": PROSEDUR_KOKU / "hesap",
     },
     "kredi": {
