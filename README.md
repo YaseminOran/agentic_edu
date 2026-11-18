@@ -30,11 +30,11 @@ python demo.py                                                            # asis
 
 Haftadan haftaya sonuçlar: [eval/karne.md](eval/karne.md).
 
-> **Hafta 4 (bu hafta) materyalleri `main` ve `hafta-3` dallarında.** Son hali almak için terminalde:
+> **Hafta 4 (bu hafta) materyalleri `hafta-4` dalında** (`main` de aynı içerikte). Son hali almak için terminalde:
 > ```bash
 > git stash            # notebook çıktıları gibi yerel değişiklikleri kenara koyar
 > git fetch origin
-> git checkout hafta-3
+> git checkout hafta-4
 > git pull
 > ```
 > Kontrol: `haftalar/hafta-4` klasöründe `01_prompt.ipynb` ve `GOREVLER.md`, proje kökünde `prompts/` olmalı.
@@ -44,7 +44,7 @@ Haftadan haftaya sonuçlar: [eval/karne.md](eval/karne.md).
 | 1 | LLM çağırma, yapılandırılmış çıktı, sınıflandırma, değerlendirme (teori) | – |
 | 2 | Tek ajan ve tool calling: ajan döngüsü, API entegrasyonu, worker agent, insan onayı, hata yönetimi | `hafta-1` (başlangıç), `hafta-2` (çözüm) |
 | 3 | Prosedürlerden RAG (bge-m3 + FAISS), kaynak gösterme, harici veri, izleme (JSONL) | `hafta-2` (başlangıç), `hafta-3` (çözüm) |
-| 4 | Prompt şablonları, banka dili, kişisel veri maskeleme, self-check, A/B testi ve hakem | `main` ve `hafta-3` (başlangıç, aynı içerik), `hafta-4` (çözüm) |
+| 4 | Prompt şablonları, banka dili, kişisel veri maskeleme, self-check, A/B testi ve hakem | `hafta-4` (başlangıç, `main` de aynı), `hafta-4-cozum` (çözüm) |
 | 5 | Kapsamlı değerlendirme ve Streamlit demo | `hafta-5` |
 
 ## Kurulum
@@ -77,7 +77,8 @@ Her haftanın görevleri `haftalar/hafta-N/GOREVLER.md` dosyasındadır:
 - Hafta 3: [haftalar/hafta-3/GOREVLER.md](haftalar/hafta-3/GOREVLER.md) (sık hatalar dahil)
 - Hafta 4: [haftalar/hafta-4/GOREVLER.md](haftalar/hafta-4/GOREVLER.md) (sık hatalar dahil)
 
-Her hafta bir önceki haftanın çözüm dalından başlar (Hafta 4 için `hafta-3`; `main` de aynı içeriktedir). O haftanın lab görevleri kodda
+Hafta 4'ten itibaren her haftanın iki dalı var: `hafta-N` (başlangıç, derste buna geçin) ve `hafta-N-cozum` (lab çözümleri).
+`main` her zaman bu haftanın başlangıcıyla aynıdır. O haftanın lab görevleri kodda
 `# TODO (Lab N):` yorumuyla işaretlidir.
 
 ## Klasörler

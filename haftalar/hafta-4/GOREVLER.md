@@ -37,11 +37,11 @@ Merak ederseniz: `src/asistan/sablonlar.py` (şablon okuma ve doldurma), `maskel
 | 5 | Görev 4 | Tam ölçüm, karne, demo ve geri bildirim | 1 saat |
 
 ## Hazırlık (15 dk)
-1. `hafta-3` dalına geçin ve son hali alın:
+1. `hafta-4` dalına geçin ve son hali alın:
    ```bash
    git stash
    git fetch origin
-   git checkout hafta-3
+   git checkout hafta-4
    git pull
    ```
    Kontrol: `haftalar/hafta-4/` klasörü ve proje kökünde `prompts/` klasörü olmalı.
@@ -64,7 +64,7 @@ Her hücrenin üstündeki iki cümleyi (**Ne yapıyoruz? Neye bakacağız?**) ç
 | 3 | Gönderilmeden kim kontrol ediyor? | Kötü bir taslağı kod ve model nasıl yakalıyor, yeniden yazım |
 | 4 | Gerçekten iyileşti mi? | v1 ve v2 küçük A/B testi, hakemin puanları |
 
-Notebook'taki kayıtlı çıktılar çözüm dalında (`hafta-4`) üretildi. Sizin dalınızda Bölüm 1'deki v2 bir **iskelet**
+Notebook'taki kayıtlı çıktılar çözüm dalında (`hafta-4-cozum`) üretildi. Sizin dalınızda Bölüm 1'deki v2 bir **iskelet**
 (Görev 2'de dolduracaksınız) ve araç çıktısı henüz maskelenmiyor (Görev 3). Yeniden çalıştırınca farklı çıktı görmeniz normal.
 
 **Teslim:** Notebook sonundaki 4 tartışma sorusunun cevabı (markdown hücresi).
@@ -155,8 +155,8 @@ yakaladığı hata ve maliyeti.
 
 Lab'larda takılırsanız çözümü alın:
 ```bash
-git checkout origin/hafta-4 -- prompts/taslak/v2.md src/asistan/sablonlar.py   # Lab 2
-git checkout origin/hafta-4 -- src/asistan/araclar.py                          # Lab 3
+git checkout origin/hafta-4-cozum -- prompts/taslak/v2.md src/asistan/sablonlar.py   # Lab 2
+git checkout origin/hafta-4-cozum -- src/asistan/araclar.py                          # Lab 3
 ```
 
 ## Sık hatalar
