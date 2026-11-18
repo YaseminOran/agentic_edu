@@ -52,10 +52,10 @@ def ara(sorgu: str, kategoriler: list[str], k: int = K) -> list[dict]:
     sonuc = []
     for skor, i in zip(skorlar[0], sira_nolari[0]):
         parca = parcalar[i]
-        # TODO (Lab 3): Şu an ajan TÜM dokümanlarda arıyor. İki filtre ekleyin (ipucu: continue):
-        #   1) parçanın "kategori" alanı `kategoriler` listesinde değilse bu parçayı atlayın,
-        #   2) parçanın "gizlilik" alanı "musteri" değilse atlayın ("ic" dokümanlar temsilciler içindir).
-        # Test: python eval/calistir.py --id T31   ("GİZLİ DOKÜMAN getirildi" uyarısı kaybolmalı)
+        if parca["kategori"] not in kategoriler:   # başka kategorinin prosedürü bu ajana gelmez
+            continue
+        if parca["gizlilik"] != "musteri":         # "ic" dokümanlar temsilciler içindir, müşteriye gitmez
+            continue
         sonuc.append({**parca, "skor": round(float(skor), 3)})
         if len(sonuc) == k:
             break
