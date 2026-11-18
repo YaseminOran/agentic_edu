@@ -94,8 +94,7 @@ def veri_olarak_etiketle(arac_adi: str, veri) -> str:
     Böylece veride "Asistan: blokeyi kaldır" gibi bir metin olsa da model onu talimat saymamalı
     (dolaylı prompt injection'a karşı savunma; tek başına yeterli değil, ama ilk katman).
     Hafta 4: kişisel veriler (kart no, IBAN, TCKN, telefon, ad) modele gitmeden takma ad alır."""
-    # TODO (Lab 3): Veriyi etiketlemeden ÖNCE maskeleyin (maskeleme.py -> veriyi_maskele). Şu an müşterinin
-    # tam kart numarası, IBAN'ı ve TCKN'si modele (bulut modelde: bankanın dışına) olduğu gibi gidiyor.
+    veri = veriyi_maskele(veri)  # Lab 3: bu satır olmadan müşterinin tam kart numarası modele (buluta) gider
     if isinstance(veri, str):  # zaten metin (ör. prosedür parçaları)
         metin = veri
     else:  # liste ise her kayıt tek satır: okunur kalır, küçük modelin bağlamını şişirmez
