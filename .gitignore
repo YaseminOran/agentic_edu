@@ -10,8 +10,10 @@ __pycache__/
 # Eğitmen notları katılımcılarla paylaşılmaz; sadece eğitmenin bilgisayarında durur
 haftalar/*/egitmen_notu.md
 
-# Üretilen çıktılar (eval/temel_cizgi/ bilerek git'e girer)
+# Üretilen çıktılar (eval/temel_cizgi/ ve eval/karne.md bilerek git'e girer)
 eval/sonuclar/
+eval/geri_bildirim.csv
+eval/test_seti_adaylari.csv
 logs/
 data/indeks/
 *.faiss

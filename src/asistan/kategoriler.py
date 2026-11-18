@@ -1,9 +1,11 @@
-"""Talep kategorileri ve her kategorinin araç seti / prosedür klasörü (Hafta 2; Hafta 3'te doviz_kuru).
+"""Talep kategorileri ve her kategorinin araç seti / prosedür klasörü (Hafta 2; Hafta 3'te doviz_kuru;
+Hafta 4'te hazır yanıtlar prompts/kurallar.md'ye taşındı).
 Ajan TEKTİR; kategoriye göre sadece araç listesi ve prosedür klasörü değişir.
 Yeni bir alan eklemek için kod değil, bu sözlük değişir (5. haftada kendi probleminize uyarlarken).
 """
 
 from asistan.ayarlar import PROJE_KOKU
+from asistan.sablonlar import hazir_cumle
 
 PROSEDUR_KOKU = PROJE_KOKU / "data" / "prosedurler"
 
@@ -41,17 +43,14 @@ AJANA_GITMEYENLER = {
                     "yardım isteme. DİKKAT: dolandırıcılık MAĞDURU olan müşteri bu kategoriye girmez; "
                     "ilgili ürün kategorisine (kart/hesap) girer.",
         "davranis": "reddet",
-        "hazir_yanit": "Bu talebinize güvenlik politikalarımız gereği yardımcı olamıyorum. "
-                       "Kendi kart, hesap ve kredi işlemlerinizle ilgili her konuda yardımcı olmaktan memnuniyet duyarım.",
+        "hazir_yanit": hazir_cumle("reddet"),
     },
     "diger": {
         "aciklama": "Bankacılık ürünleriyle ilgisi olmayan talepler: genel sohbet, şiir, kodlama, hava durumu, "
                     "spor, yatırım tavsiyesi, rakip bankalar; ayrıca belirli bir ürüne bağlanamayan genel "
                     "istekler (teşekkür, temsilci isteği).",
         "davranis": "kapsam_disi",
-        "hazir_yanit": "Bu konu Örnek Bank müşteri asistanının kapsamı dışında kalıyor. Kart, hesap ve kredi "
-                       "işlemlerinizle ilgili sorularınızda yardımcı olabilirim; bir temsilciyle görüşmek "
-                       "isterseniz 0850 000 00 00 numaralı hattımızı arayabilirsiniz.",
+        "hazir_yanit": hazir_cumle("kapsam_disi"),
     },
 }
 

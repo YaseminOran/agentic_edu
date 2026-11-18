@@ -1,12 +1,12 @@
-"""Her cevapla() çalıştırmasının izini (trace) kaydeder (Hafta 3, adım 6).
+"""Her cevapla() çalıştırmasının izini (trace) kaydeder (Hafta 3, adım 6; Hafta 4'te şablon sürümü ve maskeleme kontrolü).
 Bir iz şunları söyler: hangi düğümler hangi sırayla ve kaç ms'de çalıştı, hangi araçlar çağrıldı, prosedür
-aramasında hangi parçalar hangi skorla geldi, her model çağrısı kaç token harcadı.
+aramasında hangi parçalar hangi skorla geldi, her model çağrısı kaç token harcadı, hangi şablon sürümleri
+kullanıldı ve modele maskelenmemiş kişisel veri gitti mi (maskesiz_veri).
 Kayıt: logs/izler/YYYY-MM-DD.jsonl (her satır bir çalıştırma), kimlik bilgileri maskelenir. TRACING=kapali ise yazılmaz.
 """
 
 import json
 import os
-import re
 import time
 import uuid
 from contextlib import contextmanager
@@ -17,29 +17,11 @@ from langchain_core.callbacks import BaseCallbackHandler
 
 from asistan.ayarlar import PROJE_KOKU
 from asistan.gunluk import log
+from asistan.maskeleme import maskele, tam_veri_bul
 
 IZ_KLASORU = PROJE_KOKU / "logs" / "izler"
 
 _AKTIF_IZ: ContextVar[dict | None] = ContextVar("aktif_iz", default=None)
-
-
-# ---------------------------------------------------------------------------
-# Maskeleme: iz dosyası müşteri verisi taşımasın (veriler sentetik olsa da alışkanlık)
-# ---------------------------------------------------------------------------
-
-MASKELER = [
-    (re.compile(r"\bTR\d{2}(?: ?\d{4}){5} ?\d{2}\b"), "[IBAN]"),
-    (re.compile(r"\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}\b"), "[KART]"),
-    (re.compile(r"\b\d{11}\b"), "[TCKN]"),
-    (re.compile(r"\b0?5\d{2}[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}\b"), "[TELEFON]"),
-    (re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+"), "[EPOSTA]"),
-]
-
-
-def maskele(metin: str) -> str:
-    for kalip, yerine in MASKELER:
-        metin = kalip.sub(yerine, metin)
-    return metin
 
 
 # ---------------------------------------------------------------------------
@@ -51,6 +33,13 @@ def olay_ekle(tur: str, **alanlar) -> None:
     iz = _AKTIF_IZ.get()
     if iz is not None:
         iz["olaylar"].append({"tur": tur, "t_ms": round((time.perf_counter() - iz["_baslangic"]) * 1000), **alanlar})
+
+
+def iz_alanina_ekle(alan: str, anahtar: str, deger) -> None:
+    """Aktif izin bir sözlük alanına değer yazar, ör. iz["sablonlar"]["taslak"] = "v2". İz yoksa bir şey yapmaz."""
+    iz = _AKTIF_IZ.get()
+    if iz is not None:
+        iz.setdefault(alan, {})[anahtar] = deger
 
 
 @contextmanager
@@ -99,6 +88,7 @@ class IzToplayici(BaseCallbackHandler):
     def __init__(self):
         self.acik: dict = {}      # run_id -> (tür, ad, düğüm, başlangıç zamanı)
         self.girdiler: dict = {}  # run_id -> araç parametreleri
+        self.maskesiz: dict = {}  # run_id -> modele giden metinde bulunan maskesiz kişisel veri türleri
 
     def _ac(self, run_id, tur, ad, metadata):
         self.acik[run_id] = (tur, ad, (metadata or {}).get("langgraph_node", ""), time.perf_counter())
@@ -128,14 +118,19 @@ class IzToplayici(BaseCallbackHandler):
     # Model çağrıları: token bilgisi yanıtın usage_metadata alanında gelir
     def on_chat_model_start(self, serialized, messages, *, run_id, metadata=None, **kwargs):
         self._ac(run_id, "model", (metadata or {}).get("ls_model_name", "?"), metadata)
+        # Hafta 4: modele giden metinde maskelenmemiş kişisel veri var mı? Değeri değil, sadece TÜRÜNÜ yazarız.
+        # (İz dosyası yazılırken her şey zaten maskelenir; bu alan "modele ne gitti" sorusunun kanıtıdır.)
+        metin = "\n".join(str(m.content) for grup in messages for m in grup)
+        self.maskesiz[run_id] = tam_veri_bul(metin)
 
     def on_llm_end(self, response, *, run_id, **kwargs):
         mesaj = getattr(response.generations[0][0], "message", None) if response.generations else None
         kullanim = getattr(mesaj, "usage_metadata", None) or {}
-        self._kapat(run_id, girdi_token=kullanim.get("input_tokens"), cikti_token=kullanim.get("output_tokens"))
+        self._kapat(run_id, girdi_token=kullanim.get("input_tokens"), cikti_token=kullanim.get("output_tokens"),
+                    maskesiz_veri=self.maskesiz.pop(run_id, []))
 
     def on_llm_error(self, error, *, run_id, **kwargs):
-        self._kapat(run_id, durum=f"hata: {type(error).__name__}")
+        self._kapat(run_id, durum=f"hata: {type(error).__name__}", maskesiz_veri=self.maskesiz.pop(run_id, []))
 
     # Araçlar: hangi araç, hangi parametrelerle (çıktı yazılmaz: müşteri verisi içerir)
     def on_tool_start(self, serialized, input_str, *, run_id, metadata=None, inputs=None, **kwargs):
