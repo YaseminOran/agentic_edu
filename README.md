@@ -37,7 +37,7 @@ Haftadan haftaya sonuçlar: [eval/karne.md](eval/karne.md).
 > git checkout hafta-4
 > git pull
 > ```
-> Kontrol: `haftalar/hafta-4` klasöründe `01_prompt.ipynb` ve `GOREVLER.md`, proje kökünde `prompts/` olmalı.
+> Kontrol: `haftalar/hafta-4` klasöründe üç notebook (`01_prompt_tasarimi`, `02_guvenli_yanit`, `03_olc_ve_iyilestir`) ve `GOREVLER.md`, proje kökünde `prompts/` olmalı.
 
 | Hafta | Konu | Dal |
 |---|---|---|
