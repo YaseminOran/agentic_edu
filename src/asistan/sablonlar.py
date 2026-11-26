@@ -16,7 +16,7 @@ AYIRAC = "=== KULLANICI MESAJI ==="
 SURUMLER = {
     "siniflandirma": "v1",
     "ajan": "v1",
-    "taslak": "v1",  # Lab 2: v2 A/B testinde v1'den iyiyse burayı "v2" yapın
+    "taslak": "v2",  # Lab 2: v2 A/B testinde v1'den iyiyse burayı "v2" yapın
     "self_check": "v1",
     "hakem": "v1",
 }
